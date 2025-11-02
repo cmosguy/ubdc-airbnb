@@ -10,12 +10,35 @@ CELERY_TASK_CHUNK_SIZE = os.getenv("ENTRIES_PER_GROUP_TASK", 100)
 AIRBNB_API_ENDPOINT = os.getenv("AIRBNB_API_ENDPOINT", "https://www.airbnb.co.uk/api")
 AIRBNB_PUBLIC_API_KEY = os.getenv("AIRBNB_PUBLIC_API_KEY", "d306zoyjsyarp7ifhu67rjxn52tv0t20")
 AIRBNB_LISTINGS_MOVED_MIN_DISTANCE = os.getenv("AIRBNB_LISTINGS_MOVED_MIN_DISTANCE", 150)
-ZYTE_API_KEY = os.getenv("ZYTE_API_KEY")
 MAX_GRID_LEVEL = os.getenv("MAX_GRID_LEVEL", 22)
-if ZYTE_API_KEY:
-    AIRBNB_PROXY = f"http://{ZYTE_API_KEY}:@proxy.crawlera.com:8011"
-else:
-    AIRBNB_PROXY = None
+
+# PROXY CONFIGURATION
+# Supported providers: 'zyte', 'oxylabs'
+PROXY_PROVIDER = os.getenv("PROXY_PROVIDER", "zyte").lower()
+
+# Zyte configuration (legacy support)
+ZYTE_API_KEY = os.getenv("ZYTE_API_KEY")
+
+# Oxylabs configuration
+OXYLABS_USERNAME = os.getenv("OXYLABS_USERNAME")
+OXYLABS_PASSWORD = os.getenv("OXYLABS_PASSWORD")
+
+# Initialize proxy service
+PROXY_SERVICE = None
+AIRBNB_PROXY = None
+
+if PROXY_PROVIDER == "zyte" and ZYTE_API_KEY:
+    from ubdc_airbnb.proxy import get_proxy_service
+    PROXY_SERVICE = get_proxy_service("zyte", api_key=ZYTE_API_KEY)
+    AIRBNB_PROXY = PROXY_SERVICE.get_proxy_url()
+elif PROXY_PROVIDER == "oxylabs" and OXYLABS_USERNAME and OXYLABS_PASSWORD:
+    from ubdc_airbnb.proxy import get_proxy_service
+    PROXY_SERVICE = get_proxy_service(
+        "oxylabs",
+        username=OXYLABS_USERNAME,
+        password=OXYLABS_PASSWORD,
+    )
+    AIRBNB_PROXY = PROXY_SERVICE.get_proxy_url()
 
 EXTRA_HEADERS = {x.replace("_", "-"): os.environ[x] for x in os.environ if x.startswith("PROXY_HEADER_")}
 

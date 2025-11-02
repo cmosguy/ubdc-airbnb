@@ -43,9 +43,25 @@ The project has several components:
 
 ##### Proxy:
 
-For this project we are using a smart proxy system from [Zyte](https://www.zyte.com/). Airbnb has in place measures that
-limit large scale data scraping from their sites, by throttling the amount of requests it accepts. You will need a proxy
-service from Zyte or a similar provider.
+This project uses a smart proxy system to handle requests to Airbnb. Airbnb has measures in place that
+limit large scale data scraping from their sites by throttling the amount of requests it accepts.
+
+The project supports multiple proxy providers:
+
+**Zyte Smart Proxy Manager** (Default)
+- Website: [Zyte](https://www.zyte.com/)
+- Configuration: Set environment variables `PROXY_PROVIDER=zyte` and `ZYTE_API_KEY=<your-api-key>`
+- Documentation: https://docs.zyte.com/smart-proxy-manager.html
+
+**Oxylabs Residential Proxies**
+- Website: [Oxylabs](https://oxylabs.io/)
+- Configuration: Set environment variables:
+  - `PROXY_PROVIDER=oxylabs`
+  - `OXYLABS_USERNAME=<your-username>`
+  - `OXYLABS_PASSWORD=<your-password>`
+- Documentation: https://developers.oxylabs.io/scraper-apis/getting-started
+
+You will need an account with one of these proxy service providers to use this project.
 
 #### Initial Setup
 

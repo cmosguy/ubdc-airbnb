@@ -22,9 +22,15 @@ COPY ./poetry.lock ./pyproject.toml /tmp/
 RUN poetry config virtualenvs.create false \
     && poetry install --no-interaction --no-ansi --no-root
 
-
-ADD https://docs.zyte.com/_static/zyte-smartproxy-ca.crt /usr/local/share/ca-certificates/zyte-smartproxy-ca.crt
-RUN update-ca-certificates
+# Install CA certificates for proxy providers
+# Zyte Smart Proxy CA certificate (only needed when using Zyte)
+# For Oxylabs or other providers, this step can be skipped
+ARG PROXY_PROVIDER=zyte
+RUN if [ "$PROXY_PROVIDER" = "zyte" ]; then \
+        curl -sSL https://docs.zyte.com/_static/zyte-smartproxy-ca.crt \
+        -o /usr/local/share/ca-certificates/zyte-smartproxy-ca.crt && \
+        update-ca-certificates; \
+    fi
 
 COPY ./src/ubdc_airbnb /app
 WORKDIR /app
