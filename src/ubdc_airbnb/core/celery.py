@@ -8,7 +8,11 @@ from celery.utils.log import get_task_logger
 from django.conf import settings
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "core.settings")
-django.setup()
+
+# Note: We don't call django.setup() here because:
+# 1. When imported via core/__init__.py during Django initialization, setup is handled by Django
+# 2. When run as a standalone Celery worker, Celery handles the setup
+# 3. Calling setup() here causes reentrant errors when manage.py imports settings
 
 # Tasks with be routed according to the following.
 # All other tasks will be routed to the default queue.

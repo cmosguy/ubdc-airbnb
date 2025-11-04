@@ -13,6 +13,8 @@ services:
       - .env
     command:
       - start-beat
+    volumes:
+      - data_volume:/app/data
     profiles:
       - all
       - core
@@ -29,6 +31,8 @@ services:
       - .env
     command:
       - start-worker
+    volumes:
+      - data_volume:/app/data
     profiles:
       - all
       - core
@@ -37,7 +41,9 @@ services:
     image: postgis/postgis:17-3.5
     volumes:
       - postgres_data:/var/lib/postgresql/
-    env:
+    ports:
+      - "5432:5432"
+    environment:
       POSTGRES_USER: ${DATABASE_USERNAME:?error}
       POSTGRES_PASSWORD: ${DATABASE_PASSWORD:?error}
       POSTGRES_DB: ${DATABASE_NAME:?error}
@@ -61,4 +67,10 @@ volumes:
     driver_opts:
       type: none
       device: ./docker/postgis/PGDATA
+      o: bind
+  data_volume:
+    driver: local
+    driver_opts:
+      type: none
+      device: ./docker/data
       o: bind

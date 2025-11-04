@@ -60,6 +60,11 @@ class Command(BaseCommand):
             action="store_true",
             help="Show what would be created without actually creating it",
         )
+        parser.add_argument(
+            "--yes",
+            action="store_true",
+            help="Skip confirmation prompts for large areas",
+        )
 
     def handle(self, *args, **options):
         location = options["location"]
@@ -68,6 +73,7 @@ class Command(BaseCommand):
         provider = options["provider"]
         use_cache = not options["no_cache"]
         dry_run = options["dry_run"]
+        skip_confirm = options["yes"]
 
         self.stdout.write(f"🔍 Searching for: {location}")
 
@@ -130,7 +136,7 @@ class Command(BaseCommand):
             return
 
         # Confirm for large areas
-        if area_sq_km > 50000:  # Larger than Scotland (~78K sq km)
+        if area_sq_km > 50000 and not skip_confirm:  # Larger than Scotland (~78K sq km)
             self.stdout.write(
                 self.style.WARNING(
                     f"\n⚠️  WARNING: This is a LARGE area ({area_sq_km:,.0f} sq km)"
