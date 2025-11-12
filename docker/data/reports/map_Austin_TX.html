@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_6c631a5b35f1277c0b5d66e0fd8ca7d0 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+    <div style="position: fixed; 
+                bottom: 50px; right: 50px; width: 200px; height: 120px; 
+                background-color: white; z-index:9999; font-size:14px;
+                border:2px solid grey; border-radius: 5px; padding: 10px">
+        <p style="margin: 0 0 10px 0; font-weight: bold;">Quality Score Legend</p>
+        <p style="margin: 5px 0;"><span style="color: green;">●</span> High (70-100)</p>
+        <p style="margin: 5px 0;"><span style="color: #FFD700;">●</span> Medium (50-69)</p>
+        <p style="margin: 5px 0;"><span style="color: red;">●</span> Low (0-49)</p>
+    </div>
+    
+    
+            <div class="folium-map" id="map_6c631a5b35f1277c0b5d66e0fd8ca7d0" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_6c631a5b35f1277c0b5d66e0fd8ca7d0 = L.map(
+                "map_6c631a5b35f1277c0b5d66e0fd8ca7d0",
+                {
+                    center: [30.2710115, -97.71259799999999],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 13,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_aa3bea3d32e7752a193c3fed84c02118 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_aa3bea3d32e7752a193c3fed84c02118.addTo(map_6c631a5b35f1277c0b5d66e0fd8ca7d0);
+        
+    
+            map_6c631a5b35f1277c0b5d66e0fd8ca7d0.fitBounds(
+                [[30.20755799999999, -97.80838499999999], [30.334465000000005, -97.616811]],
+                {}
+            );
+        
+    
+            var marker_3a7669183be823a6d542415facc0e11b = L.marker(
+                [30.2697, -97.73457],
+                {
+}
+            ).addTo(map_6c631a5b35f1277c0b5d66e0fd8ca7d0);
+        
+    
+            var div_icon_0d86fdafedf89293dfaf7a3d7aeacc74 = L.divIcon({
+  "html": "\n        \u003cdiv style=\"\n            background-color: #28a745;\n            border: 2px solid white;\n            border-radius: 50%;\n            width: 32px;\n            height: 32px;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            font-weight: bold;\n            font-size: 14px;\n            color: white;\n            box-shadow: 0 2px 4px rgba(0,0,0,0.3);\n        \"\u003e1\u003c/div\u003e\n        ",
+  "className": "empty",
+});
+        
+    
+        var popup_065cbb24612457156ee5c018101865e8 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2486443c93213f181db285c413457ce2 = $(`<div id="html_2486443c93213f181db285c413457ce2" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 250px;">             <h4 style="margin: 0 0 10px 0;">Rank #1 - Score: 100.0/100</h4>             <p style="margin: 5px 0;"><b>Listing ID:</b> 1178894856859586709</p>         <p style='margin: 5px 0;'><b>Type:</b> private_room</p><p style='margin: 5px 0;'><b>Rating:</b> ⭐ 5.0</p>             <p style='margin: 5px 0;'><b>Occupancy:</b> 103% / 100%</p>             <p style='margin: 10px 0 0 0;'>                 <a href="https://www.airbnb.com/rooms/1178894856859586709" target="_blank" style="color: #FF5A5F;">                     View on Airbnb →                 </a>             </p>         </div>         </div>`)[0];
+                popup_065cbb24612457156ee5c018101865e8.setContent(html_2486443c93213f181db285c413457ce2);
+            
+        
+
+        marker_3a7669183be823a6d542415facc0e11b.bindPopup(popup_065cbb24612457156ee5c018101865e8)
+        ;
+
+        
+    
+    
+                marker_3a7669183be823a6d542415facc0e11b.setIcon(div_icon_0d86fdafedf89293dfaf7a3d7aeacc74);
+            
+    
+            var marker_301ab736a75309b2044bf3c003dffc21 = L.marker(
+                [30.26871, -97.73616],
+                {
+}
+            ).addTo(map_6c631a5b35f1277c0b5d66e0fd8ca7d0);
+        
+    
+            var div_icon_6ea0267b636694a8fe6ea0bf3fdd1db2 = L.divIcon({
+  "html": "\n        \u003cdiv style=\"\n            background-color: #28a745;\n            border: 2px solid white;\n            border-radius: 50%;\n            width: 32px;\n            height: 32px;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            font-weight: bold;\n            font-size: 14px;\n            color: white;\n            box-shadow: 0 2px 4px rgba(0,0,0,0.3);\n        \"\u003e2\u003c/div\u003e\n        ",
+  "className": "empty",
+});
+        
+    
+        var popup_aec057e25c34f5c905f79daf86975218 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5a33d0c2d6146e9df9d6696eab8c7130 = $(`<div id="html_5a33d0c2d6146e9df9d6696eab8c7130" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 250px;">             <h4 style="margin: 0 0 10px 0;">Rank #2 - Score: 100.0/100</h4>             <p style="margin: 5px 0;"><b>Listing ID:</b> 1141339553870359190</p>         <p style='margin: 5px 0;'><b>Type:</b> private_room</p><p style='margin: 5px 0;'><b>Rating:</b> ⭐ 4.5</p>             <p style='margin: 5px 0;'><b>Occupancy:</b> 103% / 100%</p>             <p style='margin: 10px 0 0 0;'>                 <a href="https://www.airbnb.com/rooms/1141339553870359190" target="_blank" style="color: #FF5A5F;">                     View on Airbnb →                 </a>             </p>         </div>         </div>`)[0];
+                popup_aec057e25c34f5c905f79daf86975218.setContent(html_5a33d0c2d6146e9df9d6696eab8c7130);
+            
+        
+
+        marker_301ab736a75309b2044bf3c003dffc21.bindPopup(popup_aec057e25c34f5c905f79daf86975218)
+        ;
+
+        
+    
+    
+                marker_301ab736a75309b2044bf3c003dffc21.setIcon(div_icon_6ea0267b636694a8fe6ea0bf3fdd1db2);
+            
+    
+            var marker_0f3f2d9857e86fbdfbd988e37872108d = L.marker(
+                [30.2694, -97.73314],
+                {
+}
+            ).addTo(map_6c631a5b35f1277c0b5d66e0fd8ca7d0);
+        
+    
+            var div_icon_cdbd5dd283a76c1a553457b4be2291ea = L.divIcon({
+  "html": "\n        \u003cdiv style=\"\n            background-color: #28a745;\n            border: 2px solid white;\n            border-radius: 50%;\n            width: 32px;\n            height: 32px;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            font-weight: bold;\n            font-size: 14px;\n            color: white;\n            box-shadow: 0 2px 4px rgba(0,0,0,0.3);\n        \"\u003e3\u003c/div\u003e\n        ",
+  "className": "empty",
+});
+        
+    
+        var popup_e65b2993cd22063fff09477667bf8fef = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_72397218b0d6146ca0b40ca46a4b961b = $(`<div id="html_72397218b0d6146ca0b40ca46a4b961b" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 250px;">             <h4 style="margin: 0 0 10px 0;">Rank #3 - Score: 90.5/100</h4>             <p style="margin: 5px 0;"><b>Listing ID:</b> 1178912935006821554</p>         <p style='margin: 5px 0;'><b>Type:</b> private_room</p><p style='margin: 5px 0;'><b>Rating:</b> ⭐ 5.0</p>             <p style='margin: 5px 0;'><b>Occupancy:</b> 103% / 100%</p>             <p style='margin: 10px 0 0 0;'>                 <a href="https://www.airbnb.com/rooms/1178912935006821554" target="_blank" style="color: #FF5A5F;">                     View on Airbnb →                 </a>             </p>         </div>         </div>`)[0];
+                popup_e65b2993cd22063fff09477667bf8fef.setContent(html_72397218b0d6146ca0b40ca46a4b961b);
+            
+        
+
+        marker_0f3f2d9857e86fbdfbd988e37872108d.bindPopup(popup_e65b2993cd22063fff09477667bf8fef)
+        ;
+
+        
+    
+    
+                marker_0f3f2d9857e86fbdfbd988e37872108d.setIcon(div_icon_cdbd5dd283a76c1a553457b4be2291ea);
+            
+    
+            var marker_eaad2725ad2da580a64b07249705bbc6 = L.marker(
+                [30.27045, -97.73814],
+                {
+}
+            ).addTo(map_6c631a5b35f1277c0b5d66e0fd8ca7d0);
+        
+    
+            var div_icon_873b21dfa3dfe536ccc24d1c84ccc3ad = L.divIcon({
+  "html": "\n        \u003cdiv style=\"\n            background-color: #28a745;\n            border: 2px solid white;\n            border-radius: 50%;\n            width: 32px;\n            height: 32px;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            font-weight: bold;\n            font-size: 14px;\n            color: white;\n            box-shadow: 0 2px 4px rgba(0,0,0,0.3);\n        \"\u003e4\u003c/div\u003e\n        ",
+  "className": "empty",
+});
+        
+    
+        var popup_7d3a7fa17ba501c4098a19f17bac7b9c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4755272274cdeadc307f9a24e113e994 = $(`<div id="html_4755272274cdeadc307f9a24e113e994" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 250px;">             <h4 style="margin: 0 0 10px 0;">Rank #4 - Score: 83.3/100</h4>             <p style="margin: 5px 0;"><b>Listing ID:</b> 980695598307202293</p>         <p style='margin: 5px 0;'><b>Type:</b> private_room</p><p style='margin: 5px 0;'><b>Rating:</b> ⭐ 4.5</p>             <p style='margin: 5px 0;'><b>Occupancy:</b> 103% / 100%</p>             <p style='margin: 10px 0 0 0;'>                 <a href="https://www.airbnb.com/rooms/980695598307202293" target="_blank" style="color: #FF5A5F;">                     View on Airbnb →                 </a>             </p>         </div>         </div>`)[0];
+                popup_7d3a7fa17ba501c4098a19f17bac7b9c.setContent(html_4755272274cdeadc307f9a24e113e994);
+            
+        
+
+        marker_eaad2725ad2da580a64b07249705bbc6.bindPopup(popup_7d3a7fa17ba501c4098a19f17bac7b9c)
+        ;
+
+        
+    
+    
+                marker_eaad2725ad2da580a64b07249705bbc6.setIcon(div_icon_873b21dfa3dfe536ccc24d1c84ccc3ad);
+            
+    
+            var marker_3911d7e99213789816da73c5ad7b7cc3 = L.marker(
+                [30.26869, -97.73756],
+                {
+}
+            ).addTo(map_6c631a5b35f1277c0b5d66e0fd8ca7d0);
+        
+    
+            var div_icon_08227ebe5f2e842968161d59d36947e7 = L.divIcon({
+  "html": "\n        \u003cdiv style=\"\n            background-color: #28a745;\n            border: 2px solid white;\n            border-radius: 50%;\n            width: 32px;\n            height: 32px;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            font-weight: bold;\n            font-size: 14px;\n            color: white;\n            box-shadow: 0 2px 4px rgba(0,0,0,0.3);\n        \"\u003e5\u003c/div\u003e\n        ",
+  "className": "empty",
+});
+        
+    
+        var popup_ca9a2fa579ec128d2dc452358e88a08a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e4adb06d13bf6d0e9e361c786c3fe49c = $(`<div id="html_e4adb06d13bf6d0e9e361c786c3fe49c" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 250px;">             <h4 style="margin: 0 0 10px 0;">Rank #5 - Score: 82.1/100</h4>             <p style="margin: 5px 0;"><b>Listing ID:</b> 48867583</p>         <p style='margin: 5px 0;'><b>Type:</b> private_room</p><p style='margin: 5px 0;'><b>Rating:</b> ⭐ 5.0</p>             <p style='margin: 5px 0;'><b>Occupancy:</b> 103% / 100%</p>             <p style='margin: 10px 0 0 0;'>                 <a href="https://www.airbnb.com/rooms/48867583" target="_blank" style="color: #FF5A5F;">                     View on Airbnb →                 </a>             </p>         </div>         </div>`)[0];
+                popup_ca9a2fa579ec128d2dc452358e88a08a.setContent(html_e4adb06d13bf6d0e9e361c786c3fe49c);
+            
+        
+
+        marker_3911d7e99213789816da73c5ad7b7cc3.bindPopup(popup_ca9a2fa579ec128d2dc452358e88a08a)
+        ;
+
+        
+    
+    
+                marker_3911d7e99213789816da73c5ad7b7cc3.setIcon(div_icon_08227ebe5f2e842968161d59d36947e7);
+            
+    
+            var marker_2a60b4cec49f6621da5dbdc67bfd803d = L.marker(
+                [30.22702, -97.73217],
+                {
+}
+            ).addTo(map_6c631a5b35f1277c0b5d66e0fd8ca7d0);
+        
+    
+            var div_icon_04d1f32bc07d4219fe2b9b71ee17dacd = L.divIcon({
+  "html": "\n        \u003cdiv style=\"\n            background-color: #28a745;\n            border: 2px solid white;\n            border-radius: 50%;\n            width: 32px;\n            height: 32px;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            font-weight: bold;\n            font-size: 14px;\n            color: white;\n            box-shadow: 0 2px 4px rgba(0,0,0,0.3);\n        \"\u003e6\u003c/div\u003e\n        ",
+  "className": "empty",
+});
+        
+    
+        var popup_22a0cf2aa6b5cd01a38b394f78470961 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b3a8ab6f3c3e5df4d906890d42330be0 = $(`<div id="html_b3a8ab6f3c3e5df4d906890d42330be0" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 250px;">             <h4 style="margin: 0 0 10px 0;">Rank #6 - Score: 70.7/100</h4>             <p style="margin: 5px 0;"><b>Listing ID:</b> 778370358360742174</p>         <p style='margin: 5px 0;'><b>Type:</b> entire_home</p><p style='margin: 5px 0;'><b>Rating:</b> ⭐ 5.0</p>             <p style='margin: 5px 0;'><b>Occupancy:</b> 103% / 100%</p>             <p style='margin: 10px 0 0 0;'>                 <a href="https://www.airbnb.com/rooms/778370358360742174" target="_blank" style="color: #FF5A5F;">                     View on Airbnb →                 </a>             </p>         </div>         </div>`)[0];
+                popup_22a0cf2aa6b5cd01a38b394f78470961.setContent(html_b3a8ab6f3c3e5df4d906890d42330be0);
+            
+        
+
+        marker_2a60b4cec49f6621da5dbdc67bfd803d.bindPopup(popup_22a0cf2aa6b5cd01a38b394f78470961)
+        ;
+
+        
+    
+    
+                marker_2a60b4cec49f6621da5dbdc67bfd803d.setIcon(div_icon_04d1f32bc07d4219fe2b9b71ee17dacd);
+            
+    
+            var marker_dce16dbf12164ef096e849a93237cb22 = L.marker(
+                [30.27956, -97.7414],
+                {
+}
+            ).addTo(map_6c631a5b35f1277c0b5d66e0fd8ca7d0);
+        
+    
+            var div_icon_174412f406f0cf3d26a2177c684b7b6f = L.divIcon({
+  "html": "\n        \u003cdiv style=\"\n            background-color: #ffc107;\n            border: 2px solid white;\n            border-radius: 50%;\n            width: 32px;\n            height: 32px;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            font-weight: bold;\n            font-size: 14px;\n            color: black;\n            box-shadow: 0 2px 4px rgba(0,0,0,0.3);\n        \"\u003e7\u003c/div\u003e\n        ",
+  "className": "empty",
+});
+        
+    
+        var popup_eb509de1a1514f40e8bcdd7705e804a1 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_cb1df6fbc783ffc8e1d4ae822a8dcc83 = $(`<div id="html_cb1df6fbc783ffc8e1d4ae822a8dcc83" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 250px;">             <h4 style="margin: 0 0 10px 0;">Rank #7 - Score: 68.8/100</h4>             <p style="margin: 5px 0;"><b>Listing ID:</b> 907876551564869578</p>         <p style='margin: 5px 0;'><b>Type:</b> entire_home</p><p style='margin: 5px 0;'><b>Rating:</b> ⭐ 5.0</p>             <p style='margin: 5px 0;'><b>Occupancy:</b> 103% / 100%</p>             <p style='margin: 10px 0 0 0;'>                 <a href="https://www.airbnb.com/rooms/907876551564869578" target="_blank" style="color: #FF5A5F;">                     View on Airbnb →                 </a>             </p>         </div>         </div>`)[0];
+                popup_eb509de1a1514f40e8bcdd7705e804a1.setContent(html_cb1df6fbc783ffc8e1d4ae822a8dcc83);
+            
+        
+
+        marker_dce16dbf12164ef096e849a93237cb22.bindPopup(popup_eb509de1a1514f40e8bcdd7705e804a1)
+        ;
+
+        
+    
+    
+                marker_dce16dbf12164ef096e849a93237cb22.setIcon(div_icon_174412f406f0cf3d26a2177c684b7b6f);
+            
+    
+            var marker_47a848cc28b5d0543ecc88d52c9b0934 = L.marker(
+                [30.27278, -97.7392],
+                {
+}
+            ).addTo(map_6c631a5b35f1277c0b5d66e0fd8ca7d0);
+        
+    
+            var div_icon_34e2c6484f8ad0852bdc8fbd01e68ea2 = L.divIcon({
+  "html": "\n        \u003cdiv style=\"\n            background-color: #ffc107;\n            border: 2px solid white;\n            border-radius: 50%;\n            width: 32px;\n            height: 32px;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            font-weight: bold;\n            font-size: 14px;\n            color: black;\n            box-shadow: 0 2px 4px rgba(0,0,0,0.3);\n        \"\u003e8\u003c/div\u003e\n        ",
+  "className": "empty",
+});
+        
+    
+        var popup_35105f39646bc12e556eee1e92c82165 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5ca1d69285b095e1915e3eb3c1e5f1c4 = $(`<div id="html_5ca1d69285b095e1915e3eb3c1e5f1c4" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 250px;">             <h4 style="margin: 0 0 10px 0;">Rank #8 - Score: 67.2/100</h4>             <p style="margin: 5px 0;"><b>Listing ID:</b> 1548972645560541601</p>         <p style='margin: 5px 0;'><b>Type:</b> private_room</p>             <p style='margin: 5px 0;'><b>Occupancy:</b> 103% / 100%</p>             <p style='margin: 10px 0 0 0;'>                 <a href="https://www.airbnb.com/rooms/1548972645560541601" target="_blank" style="color: #FF5A5F;">                     View on Airbnb →                 </a>             </p>         </div>         </div>`)[0];
+                popup_35105f39646bc12e556eee1e92c82165.setContent(html_5ca1d69285b095e1915e3eb3c1e5f1c4);
+            
+        
+
+        marker_47a848cc28b5d0543ecc88d52c9b0934.bindPopup(popup_35105f39646bc12e556eee1e92c82165)
+        ;
+
+        
+    
+    
+                marker_47a848cc28b5d0543ecc88d52c9b0934.setIcon(div_icon_34e2c6484f8ad0852bdc8fbd01e68ea2);
+            
+    
+            var marker_22a92b751136c86e10a29209d78f3918 = L.marker(
+                [30.26197982704759, -97.70556114927456],
+                {
+}
+            ).addTo(map_6c631a5b35f1277c0b5d66e0fd8ca7d0);
+        
+    
+            var div_icon_4a60146a2ba44b23ee0c6bd3893b160e = L.divIcon({
+  "html": "\n        \u003cdiv style=\"\n            background-color: #ffc107;\n            border: 2px solid white;\n            border-radius: 50%;\n            width: 32px;\n            height: 32px;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            font-weight: bold;\n            font-size: 14px;\n            color: black;\n            box-shadow: 0 2px 4px rgba(0,0,0,0.3);\n        \"\u003e9\u003c/div\u003e\n        ",
+  "className": "empty",
+});
+        
+    
+        var popup_48ec6cdfd7f108109647f14f1208f75f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e1df40853fda8c42a368d68842af2d55 = $(`<div id="html_e1df40853fda8c42a368d68842af2d55" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 250px;">             <h4 style="margin: 0 0 10px 0;">Rank #9 - Score: 60.9/100</h4>             <p style="margin: 5px 0;"><b>Listing ID:</b> 915980469972640197</p>         <p style='margin: 5px 0;'><b>Price:</b> $158.00/night</p><p style='margin: 5px 0;'><b>Type:</b> entire_home</p><p style='margin: 5px 0;'><b>Rating:</b> ⭐ 5.0</p>             <p style='margin: 5px 0;'><b>Occupancy:</b> 90% / 100%</p>             <p style='margin: 10px 0 0 0;'>                 <a href="https://www.airbnb.com/rooms/915980469972640197" target="_blank" style="color: #FF5A5F;">                     View on Airbnb →                 </a>             </p>         </div>         </div>`)[0];
+                popup_48ec6cdfd7f108109647f14f1208f75f.setContent(html_e1df40853fda8c42a368d68842af2d55);
+            
+        
+
+        marker_22a92b751136c86e10a29209d78f3918.bindPopup(popup_48ec6cdfd7f108109647f14f1208f75f)
+        ;
+
+        
+    
+    
+                marker_22a92b751136c86e10a29209d78f3918.setIcon(div_icon_4a60146a2ba44b23ee0c6bd3893b160e);
+            
+    
+            var marker_558086f7918887230bbdcb6ff444ea59 = L.marker(
+                [30.255, -97.732],
+                {
+}
+            ).addTo(map_6c631a5b35f1277c0b5d66e0fd8ca7d0);
+        
+    
+            var div_icon_fc047bd989476f3d5ced8bc2b58b30bf = L.divIcon({
+  "html": "\n        \u003cdiv style=\"\n            background-color: #ffc107;\n            border: 2px solid white;\n            border-radius: 50%;\n            width: 32px;\n            height: 32px;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            font-weight: bold;\n            font-size: 14px;\n            color: black;\n            box-shadow: 0 2px 4px rgba(0,0,0,0.3);\n        \"\u003e10\u003c/div\u003e\n        ",
+  "className": "empty",
+});
+        
+    
+        var popup_9718d7f645a581e7607c8456402729e1 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_427f7674441ad71ebc52d4c22dcfea68 = $(`<div id="html_427f7674441ad71ebc52d4c22dcfea68" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 250px;">             <h4 style="margin: 0 0 10px 0;">Rank #10 - Score: 52.7/100</h4>             <p style="margin: 5px 0;"><b>Listing ID:</b> 1216254798158559027</p>         <p style='margin: 5px 0;'><b>Price:</b> $210.00/night</p><p style='margin: 5px 0;'><b>Type:</b> entire_home</p><p style='margin: 5px 0;'><b>Rating:</b> ⭐ 5.0</p>             <p style='margin: 5px 0;'><b>Occupancy:</b> 77% / 83%</p>             <p style='margin: 10px 0 0 0;'>                 <a href="https://www.airbnb.com/rooms/1216254798158559027" target="_blank" style="color: #FF5A5F;">                     View on Airbnb →                 </a>             </p>         </div>         </div>`)[0];
+                popup_9718d7f645a581e7607c8456402729e1.setContent(html_427f7674441ad71ebc52d4c22dcfea68);
+            
+        
+
+        marker_558086f7918887230bbdcb6ff444ea59.bindPopup(popup_9718d7f645a581e7607c8456402729e1)
+        ;
+
+        
+    
+    
+                marker_558086f7918887230bbdcb6ff444ea59.setIcon(div_icon_fc047bd989476f3d5ced8bc2b58b30bf);
+            
+    
+            var marker_49ae3f2b0da01c366dd687840c80e780 = L.marker(
+                [30.25736, -97.69904],
+                {
+}
+            ).addTo(map_6c631a5b35f1277c0b5d66e0fd8ca7d0);
+        
+    
+            var div_icon_8e37ea4c41f4e8bb92c12c988551049d = L.divIcon({
+  "html": "\n        \u003cdiv style=\"\n            background-color: #ffc107;\n            border: 2px solid white;\n            border-radius: 50%;\n            width: 32px;\n            height: 32px;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            font-weight: bold;\n            font-size: 14px;\n            color: black;\n            box-shadow: 0 2px 4px rgba(0,0,0,0.3);\n        \"\u003e11\u003c/div\u003e\n        ",
+  "className": "empty",
+});
+        
+    
+        var popup_f8a89024e1f96e679aec4d857f796a8a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ad214be36a48226148005ac0eef8fe9c = $(`<div id="html_ad214be36a48226148005ac0eef8fe9c" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 250px;">             <h4 style="margin: 0 0 10px 0;">Rank #11 - Score: 50.8/100</h4>             <p style="margin: 5px 0;"><b>Listing ID:</b> 45691473</p>         <p style='margin: 5px 0;'><b>Price:</b> $128.00/night</p><p style='margin: 5px 0;'><b>Type:</b> entire_home</p><p style='margin: 5px 0;'><b>Rating:</b> ⭐ 5.0</p>             <p style='margin: 5px 0;'><b>Occupancy:</b> 83% / 73%</p>             <p style='margin: 10px 0 0 0;'>                 <a href="https://www.airbnb.com/rooms/45691473" target="_blank" style="color: #FF5A5F;">                     View on Airbnb →                 </a>             </p>         </div>         </div>`)[0];
+                popup_f8a89024e1f96e679aec4d857f796a8a.setContent(html_ad214be36a48226148005ac0eef8fe9c);
+            
+        
+
+        marker_49ae3f2b0da01c366dd687840c80e780.bindPopup(popup_f8a89024e1f96e679aec4d857f796a8a)
+        ;
+
+        
+    
+    
+                marker_49ae3f2b0da01c366dd687840c80e780.setIcon(div_icon_8e37ea4c41f4e8bb92c12c988551049d);
+            
+    
+            var marker_da7e7eddf32bc9c30773ee2e96a796a4 = L.marker(
+                [30.32867664324778, -97.7042675583594],
+                {
+}
+            ).addTo(map_6c631a5b35f1277c0b5d66e0fd8ca7d0);
+        
+    
+            var div_icon_0436c4dff86f5c89a66986774353a10b = L.divIcon({
+  "html": "\n        \u003cdiv style=\"\n            background-color: #dc3545;\n            border: 2px solid white;\n            border-radius: 50%;\n            width: 32px;\n            height: 32px;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            font-weight: bold;\n            font-size: 14px;\n            color: white;\n            box-shadow: 0 2px 4px rgba(0,0,0,0.3);\n        \"\u003e12\u003c/div\u003e\n        ",
+  "className": "empty",
+});
+        
+    
+        var popup_a18c7bafc739133a88b5488ac326eeaa = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2e9441a2e01d1d26065694a66df22580 = $(`<div id="html_2e9441a2e01d1d26065694a66df22580" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 250px;">             <h4 style="margin: 0 0 10px 0;">Rank #12 - Score: 49.7/100</h4>             <p style="margin: 5px 0;"><b>Listing ID:</b> 1365215109406958065</p>         <p style='margin: 5px 0;'><b>Price:</b> $128.64/night</p><p style='margin: 5px 0;'><b>Type:</b> entire_home</p><p style='margin: 5px 0;'><b>Rating:</b> ⭐ 4.0</p>             <p style='margin: 5px 0;'><b>Occupancy:</b> 93% / 77%</p>             <p style='margin: 10px 0 0 0;'>                 <a href="https://www.airbnb.com/rooms/1365215109406958065" target="_blank" style="color: #FF5A5F;">                     View on Airbnb →                 </a>             </p>         </div>         </div>`)[0];
+                popup_a18c7bafc739133a88b5488ac326eeaa.setContent(html_2e9441a2e01d1d26065694a66df22580);
+            
+        
+
+        marker_da7e7eddf32bc9c30773ee2e96a796a4.bindPopup(popup_a18c7bafc739133a88b5488ac326eeaa)
+        ;
+
+        
+    
+    
+                marker_da7e7eddf32bc9c30773ee2e96a796a4.setIcon(div_icon_0436c4dff86f5c89a66986774353a10b);
+            
+    
+            var marker_f2b0a3eea1db4b905232406c33f724e2 = L.marker(
+                [30.319, -97.717],
+                {
+}
+            ).addTo(map_6c631a5b35f1277c0b5d66e0fd8ca7d0);
+        
+    
+            var div_icon_8d4876ff8d00abe14f78b4868823fb18 = L.divIcon({
+  "html": "\n        \u003cdiv style=\"\n            background-color: #dc3545;\n            border: 2px solid white;\n            border-radius: 50%;\n            width: 32px;\n            height: 32px;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            font-weight: bold;\n            font-size: 14px;\n            color: white;\n            box-shadow: 0 2px 4px rgba(0,0,0,0.3);\n        \"\u003e13\u003c/div\u003e\n        ",
+  "className": "empty",
+});
+        
+    
+        var popup_1279f1910e9b367bf7d23f3bcb4139d5 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f30e1b0bbe1bfd0f3503a56b85bcb7c6 = $(`<div id="html_f30e1b0bbe1bfd0f3503a56b85bcb7c6" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 250px;">             <h4 style="margin: 0 0 10px 0;">Rank #13 - Score: 45.5/100</h4>             <p style="margin: 5px 0;"><b>Listing ID:</b> 875980141915113844</p>         <p style='margin: 5px 0;'><b>Price:</b> $298.20/night</p><p style='margin: 5px 0;'><b>Type:</b> entire_home</p><p style='margin: 5px 0;'><b>Rating:</b> ⭐ 5.0</p>             <p style='margin: 5px 0;'><b>Occupancy:</b> 80% / 73%</p>             <p style='margin: 10px 0 0 0;'>                 <a href="https://www.airbnb.com/rooms/875980141915113844" target="_blank" style="color: #FF5A5F;">                     View on Airbnb →                 </a>             </p>         </div>         </div>`)[0];
+                popup_1279f1910e9b367bf7d23f3bcb4139d5.setContent(html_f30e1b0bbe1bfd0f3503a56b85bcb7c6);
+            
+        
+
+        marker_f2b0a3eea1db4b905232406c33f724e2.bindPopup(popup_1279f1910e9b367bf7d23f3bcb4139d5)
+        ;
+
+        
+    
+    
+                marker_f2b0a3eea1db4b905232406c33f724e2.setIcon(div_icon_8d4876ff8d00abe14f78b4868823fb18);
+            
+    
+            var marker_32e7a08679ada6a928ec6d20243997c7 = L.marker(
+                [30.2422, -97.69371],
+                {
+}
+            ).addTo(map_6c631a5b35f1277c0b5d66e0fd8ca7d0);
+        
+    
+            var div_icon_4b4ce85ea36ea03bfc5bb161f1b8d55f = L.divIcon({
+  "html": "\n        \u003cdiv style=\"\n            background-color: #dc3545;\n            border: 2px solid white;\n            border-radius: 50%;\n            width: 32px;\n            height: 32px;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            font-weight: bold;\n            font-size: 14px;\n            color: white;\n            box-shadow: 0 2px 4px rgba(0,0,0,0.3);\n        \"\u003e14\u003c/div\u003e\n        ",
+  "className": "empty",
+});
+        
+    
+        var popup_beb7a15aa7dd3b8d8b19ff1033cdfb6d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_db788a3ea9f7e69cf97732cae5399c2b = $(`<div id="html_db788a3ea9f7e69cf97732cae5399c2b" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 250px;">             <h4 style="margin: 0 0 10px 0;">Rank #14 - Score: 39.3/100</h4>             <p style="margin: 5px 0;"><b>Listing ID:</b> 1249956810576205504</p>         <p style='margin: 5px 0;'><b>Price:</b> $361.00/night</p><p style='margin: 5px 0;'><b>Type:</b> entire_home</p><p style='margin: 5px 0;'><b>Rating:</b> ⭐ 5.0</p>             <p style='margin: 5px 0;'><b>Occupancy:</b> 77% / 57%</p>             <p style='margin: 10px 0 0 0;'>                 <a href="https://www.airbnb.com/rooms/1249956810576205504" target="_blank" style="color: #FF5A5F;">                     View on Airbnb →                 </a>             </p>         </div>         </div>`)[0];
+                popup_beb7a15aa7dd3b8d8b19ff1033cdfb6d.setContent(html_db788a3ea9f7e69cf97732cae5399c2b);
+            
+        
+
+        marker_32e7a08679ada6a928ec6d20243997c7.bindPopup(popup_beb7a15aa7dd3b8d8b19ff1033cdfb6d)
+        ;
+
+        
+    
+    
+                marker_32e7a08679ada6a928ec6d20243997c7.setIcon(div_icon_4b4ce85ea36ea03bfc5bb161f1b8d55f);
+            
+    
+            var marker_e3922f62f06d1148b9c924c71f14d838 = L.marker(
+                [30.269554160491342, -97.73583210124556],
+                {
+}
+            ).addTo(map_6c631a5b35f1277c0b5d66e0fd8ca7d0);
+        
+    
+            var div_icon_f420c7351a3a0c6832f9909d905d709b = L.divIcon({
+  "html": "\n        \u003cdiv style=\"\n            background-color: #dc3545;\n            border: 2px solid white;\n            border-radius: 50%;\n            width: 32px;\n            height: 32px;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            font-weight: bold;\n            font-size: 14px;\n            color: white;\n            box-shadow: 0 2px 4px rgba(0,0,0,0.3);\n        \"\u003e15\u003c/div\u003e\n        ",
+  "className": "empty",
+});
+        
+    
+        var popup_a792a30c13a1f8cf980ce9b85632b308 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_13404f7c04334d113be681906628d1ed = $(`<div id="html_13404f7c04334d113be681906628d1ed" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 250px;">             <h4 style="margin: 0 0 10px 0;">Rank #15 - Score: 36.2/100</h4>             <p style="margin: 5px 0;"><b>Listing ID:</b> 952982541156155649</p>         <p style='margin: 5px 0;'><b>Type:</b> private_room</p><p style='margin: 5px 0;'><b>Rating:</b> ⭐ 5.0</p>             <p style='margin: 5px 0;'><b>Occupancy:</b> 103% / 100%</p>             <p style='margin: 10px 0 0 0;'>                 <a href="https://www.airbnb.com/rooms/952982541156155649" target="_blank" style="color: #FF5A5F;">                     View on Airbnb →                 </a>             </p>         </div>         </div>`)[0];
+                popup_a792a30c13a1f8cf980ce9b85632b308.setContent(html_13404f7c04334d113be681906628d1ed);
+            
+        
+
+        marker_e3922f62f06d1148b9c924c71f14d838.bindPopup(popup_a792a30c13a1f8cf980ce9b85632b308)
+        ;
+
+        
+    
+    
+                marker_e3922f62f06d1148b9c924c71f14d838.setIcon(div_icon_f420c7351a3a0c6832f9909d905d709b);
+            
+    
+            var marker_25b6e2c43c71ab6341f4b0a59bce39ca = L.marker(
+                [30.285, -97.719],
+                {
+}
+            ).addTo(map_6c631a5b35f1277c0b5d66e0fd8ca7d0);
+        
+    
+            var div_icon_0ba4b800bf68648dfdc0cfdd93437aa1 = L.divIcon({
+  "html": "\n        \u003cdiv style=\"\n            background-color: #dc3545;\n            border: 2px solid white;\n            border-radius: 50%;\n            width: 32px;\n            height: 32px;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            font-weight: bold;\n            font-size: 14px;\n            color: white;\n            box-shadow: 0 2px 4px rgba(0,0,0,0.3);\n        \"\u003e16\u003c/div\u003e\n        ",
+  "className": "empty",
+});
+        
+    
+        var popup_af30a06522cede665c250069d8e345fe = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_99a6179c0c8dee38cb70e0f50fe986fc = $(`<div id="html_99a6179c0c8dee38cb70e0f50fe986fc" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 250px;">             <h4 style="margin: 0 0 10px 0;">Rank #16 - Score: 36.1/100</h4>             <p style="margin: 5px 0;"><b>Listing ID:</b> 1193622183756880194</p>         <p style='margin: 5px 0;'><b>Price:</b> $216.06/night</p><p style='margin: 5px 0;'><b>Type:</b> entire_home</p><p style='margin: 5px 0;'><b>Rating:</b> ⭐ 5.0</p>             <p style='margin: 5px 0;'><b>Occupancy:</b> 77% / 63%</p>             <p style='margin: 10px 0 0 0;'>                 <a href="https://www.airbnb.com/rooms/1193622183756880194" target="_blank" style="color: #FF5A5F;">                     View on Airbnb →                 </a>             </p>         </div>         </div>`)[0];
+                popup_af30a06522cede665c250069d8e345fe.setContent(html_99a6179c0c8dee38cb70e0f50fe986fc);
+            
+        
+
+        marker_25b6e2c43c71ab6341f4b0a59bce39ca.bindPopup(popup_af30a06522cede665c250069d8e345fe)
+        ;
+
+        
+    
+    
+                marker_25b6e2c43c71ab6341f4b0a59bce39ca.setIcon(div_icon_0ba4b800bf68648dfdc0cfdd93437aa1);
+            
+    
+            var marker_0749a4eab063beb0299083366f4d6996 = L.marker(
+                [30.2787, -97.69541],
+                {
+}
+            ).addTo(map_6c631a5b35f1277c0b5d66e0fd8ca7d0);
+        
+    
+            var div_icon_9535b5d9673a143f3cb7b0175d49f3f4 = L.divIcon({
+  "html": "\n        \u003cdiv style=\"\n            background-color: #dc3545;\n            border: 2px solid white;\n            border-radius: 50%;\n            width: 32px;\n            height: 32px;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            font-weight: bold;\n            font-size: 14px;\n            color: white;\n            box-shadow: 0 2px 4px rgba(0,0,0,0.3);\n        \"\u003e17\u003c/div\u003e\n        ",
+  "className": "empty",
+});
+        
+    
+        var popup_6cc4c50c6ea2c787f25d80f601a3796f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_010b25ff642d5433b6b405758997511f = $(`<div id="html_010b25ff642d5433b6b405758997511f" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 250px;">             <h4 style="margin: 0 0 10px 0;">Rank #17 - Score: 35.5/100</h4>             <p style="margin: 5px 0;"><b>Listing ID:</b> 52288828</p>         <p style='margin: 5px 0;'><b>Price:</b> $162.94/night</p><p style='margin: 5px 0;'><b>Type:</b> entire_home</p><p style='margin: 5px 0;'><b>Rating:</b> ⭐ 5.0</p>             <p style='margin: 5px 0;'><b>Occupancy:</b> 80% / 57%</p>             <p style='margin: 10px 0 0 0;'>                 <a href="https://www.airbnb.com/rooms/52288828" target="_blank" style="color: #FF5A5F;">                     View on Airbnb →                 </a>             </p>         </div>         </div>`)[0];
+                popup_6cc4c50c6ea2c787f25d80f601a3796f.setContent(html_010b25ff642d5433b6b405758997511f);
+            
+        
+
+        marker_0749a4eab063beb0299083366f4d6996.bindPopup(popup_6cc4c50c6ea2c787f25d80f601a3796f)
+        ;
+
+        
+    
+    
+                marker_0749a4eab063beb0299083366f4d6996.setIcon(div_icon_9535b5d9673a143f3cb7b0175d49f3f4);
+            
+    
+            var marker_7092db50863122ca58869c5831ebd582 = L.marker(
+                [30.23139, -97.76957],
+                {
+}
+            ).addTo(map_6c631a5b35f1277c0b5d66e0fd8ca7d0);
+        
+    
+            var div_icon_4c1a2e9e2dd10557862c2928faf3426b = L.divIcon({
+  "html": "\n        \u003cdiv style=\"\n            background-color: #dc3545;\n            border: 2px solid white;\n            border-radius: 50%;\n            width: 32px;\n            height: 32px;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            font-weight: bold;\n            font-size: 14px;\n            color: white;\n            box-shadow: 0 2px 4px rgba(0,0,0,0.3);\n        \"\u003e18\u003c/div\u003e\n        ",
+  "className": "empty",
+});
+        
+    
+        var popup_7095a16248f7723de1d07e0952fa0b2c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_95e49493cbea99141cdf1736f863f507 = $(`<div id="html_95e49493cbea99141cdf1736f863f507" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 250px;">             <h4 style="margin: 0 0 10px 0;">Rank #18 - Score: 33.8/100</h4>             <p style="margin: 5px 0;"><b>Listing ID:</b> 1415897966965396806</p>         <p style='margin: 5px 0;'><b>Price:</b> $134.49/night</p><p style='margin: 5px 0;'><b>Type:</b> private_room</p><p style='margin: 5px 0;'><b>Rating:</b> ⭐ 5.0</p>             <p style='margin: 5px 0;'><b>Occupancy:</b> 77% / 60%</p>             <p style='margin: 10px 0 0 0;'>                 <a href="https://www.airbnb.com/rooms/1415897966965396806" target="_blank" style="color: #FF5A5F;">                     View on Airbnb →                 </a>             </p>         </div>         </div>`)[0];
+                popup_7095a16248f7723de1d07e0952fa0b2c.setContent(html_95e49493cbea99141cdf1736f863f507);
+            
+        
+
+        marker_7092db50863122ca58869c5831ebd582.bindPopup(popup_7095a16248f7723de1d07e0952fa0b2c)
+        ;
+
+        
+    
+    
+                marker_7092db50863122ca58869c5831ebd582.setIcon(div_icon_4c1a2e9e2dd10557862c2928faf3426b);
+            
+    
+            var marker_e52f97da9f0b611ced0a60dcd9af8e14 = L.marker(
+                [30.27001825398996, -97.73482666195076],
+                {
+}
+            ).addTo(map_6c631a5b35f1277c0b5d66e0fd8ca7d0);
+        
+    
+            var div_icon_e3fc7fcb70e800fc89f597f9cb3d67c6 = L.divIcon({
+  "html": "\n        \u003cdiv style=\"\n            background-color: #dc3545;\n            border: 2px solid white;\n            border-radius: 50%;\n            width: 32px;\n            height: 32px;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            font-weight: bold;\n            font-size: 14px;\n            color: white;\n            box-shadow: 0 2px 4px rgba(0,0,0,0.3);\n        \"\u003e19\u003c/div\u003e\n        ",
+  "className": "empty",
+});
+        
+    
+        var popup_7723c3bae2111e5e021fd5bf25cc10cc = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1cbcecbb8c8f668cd145329e78cfe2ed = $(`<div id="html_1cbcecbb8c8f668cd145329e78cfe2ed" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 250px;">             <h4 style="margin: 0 0 10px 0;">Rank #19 - Score: 33.4/100</h4>             <p style="margin: 5px 0;"><b>Listing ID:</b> 1178913284239086357</p>         <p style='margin: 5px 0;'><b>Type:</b> private_room</p><p style='margin: 5px 0;'><b>Rating:</b> ⭐ 4.0</p>             <p style='margin: 5px 0;'><b>Occupancy:</b> 103% / 100%</p>             <p style='margin: 10px 0 0 0;'>                 <a href="https://www.airbnb.com/rooms/1178913284239086357" target="_blank" style="color: #FF5A5F;">                     View on Airbnb →                 </a>             </p>         </div>         </div>`)[0];
+                popup_7723c3bae2111e5e021fd5bf25cc10cc.setContent(html_1cbcecbb8c8f668cd145329e78cfe2ed);
+            
+        
+
+        marker_e52f97da9f0b611ced0a60dcd9af8e14.bindPopup(popup_7723c3bae2111e5e021fd5bf25cc10cc)
+        ;
+
+        
+    
+    
+                marker_e52f97da9f0b611ced0a60dcd9af8e14.setIcon(div_icon_e3fc7fcb70e800fc89f597f9cb3d67c6);
+            
+    
+            var marker_5a575e13fc6cb211dc2e7ac3f9d6726a = L.marker(
+                [30.26961211455825, -97.73322405985334],
+                {
+}
+            ).addTo(map_6c631a5b35f1277c0b5d66e0fd8ca7d0);
+        
+    
+            var div_icon_e0763b49e61bd3fe86dfb58bdba1607c = L.divIcon({
+  "html": "\n        \u003cdiv style=\"\n            background-color: #dc3545;\n            border: 2px solid white;\n            border-radius: 50%;\n            width: 32px;\n            height: 32px;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            font-weight: bold;\n            font-size: 14px;\n            color: white;\n            box-shadow: 0 2px 4px rgba(0,0,0,0.3);\n        \"\u003e20\u003c/div\u003e\n        ",
+  "className": "empty",
+});
+        
+    
+        var popup_ab4db471099af5e0a3c0a889cdb8e08d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ac1bd5975827302d52035f75f862a4c2 = $(`<div id="html_ac1bd5975827302d52035f75f862a4c2" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 250px;">             <h4 style="margin: 0 0 10px 0;">Rank #20 - Score: 33.3/100</h4>             <p style="margin: 5px 0;"><b>Listing ID:</b> 1178894943989968280</p>         <p style='margin: 5px 0;'><b>Type:</b> private_room</p><p style='margin: 5px 0;'><b>Rating:</b> ⭐ 4.0</p>             <p style='margin: 5px 0;'><b>Occupancy:</b> 103% / 100%</p>             <p style='margin: 10px 0 0 0;'>                 <a href="https://www.airbnb.com/rooms/1178894943989968280" target="_blank" style="color: #FF5A5F;">                     View on Airbnb →                 </a>             </p>         </div>         </div>`)[0];
+                popup_ab4db471099af5e0a3c0a889cdb8e08d.setContent(html_ac1bd5975827302d52035f75f862a4c2);
+            
+        
+
+        marker_5a575e13fc6cb211dc2e7ac3f9d6726a.bindPopup(popup_ab4db471099af5e0a3c0a889cdb8e08d)
+        ;
+
+        
+    
+    
+                marker_5a575e13fc6cb211dc2e7ac3f9d6726a.setIcon(div_icon_e0763b49e61bd3fe86dfb58bdba1607c);
+            
+    
+            var marker_396057f701180f128f98bb1b4ccf0abd = L.marker(
+                [30.2689, -97.73583],
+                {
+}
+            ).addTo(map_6c631a5b35f1277c0b5d66e0fd8ca7d0);
+        
+    
+            var div_icon_69d92ad4337b0b92e64f2c8ad8dfec4e = L.divIcon({
+  "html": "\n        \u003cdiv style=\"\n            background-color: #dc3545;\n            border: 2px solid white;\n            border-radius: 50%;\n            width: 32px;\n            height: 32px;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            font-weight: bold;\n            font-size: 14px;\n            color: white;\n            box-shadow: 0 2px 4px rgba(0,0,0,0.3);\n        \"\u003e21\u003c/div\u003e\n        ",
+  "className": "empty",
+});
+        
+    
+        var popup_dfe00a89a794736f8bb715dd2b85fec6 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_70800719e874a46cf16805297915dab6 = $(`<div id="html_70800719e874a46cf16805297915dab6" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 250px;">             <h4 style="margin: 0 0 10px 0;">Rank #21 - Score: 33.3/100</h4>             <p style="margin: 5px 0;"><b>Listing ID:</b> 1460198956208155597</p>         <p style='margin: 5px 0;'><b>Type:</b> private_room</p>             <p style='margin: 5px 0;'><b>Occupancy:</b> 103% / 100%</p>             <p style='margin: 10px 0 0 0;'>                 <a href="https://www.airbnb.com/rooms/1460198956208155597" target="_blank" style="color: #FF5A5F;">                     View on Airbnb →                 </a>             </p>         </div>         </div>`)[0];
+                popup_dfe00a89a794736f8bb715dd2b85fec6.setContent(html_70800719e874a46cf16805297915dab6);
+            
+        
+
+        marker_396057f701180f128f98bb1b4ccf0abd.bindPopup(popup_dfe00a89a794736f8bb715dd2b85fec6)
+        ;
+
+        
+    
+    
+                marker_396057f701180f128f98bb1b4ccf0abd.setIcon(div_icon_69d92ad4337b0b92e64f2c8ad8dfec4e);
+            
+    
+            var marker_4912ab8f6e570d40ac9efa34d3ad65b9 = L.marker(
+                [30.271008016200497, -97.73679661171764],
+                {
+}
+            ).addTo(map_6c631a5b35f1277c0b5d66e0fd8ca7d0);
+        
+    
+            var div_icon_b7a394fc959349519ebee5ca55780d1a = L.divIcon({
+  "html": "\n        \u003cdiv style=\"\n            background-color: #dc3545;\n            border: 2px solid white;\n            border-radius: 50%;\n            width: 32px;\n            height: 32px;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            font-weight: bold;\n            font-size: 14px;\n            color: white;\n            box-shadow: 0 2px 4px rgba(0,0,0,0.3);\n        \"\u003e22\u003c/div\u003e\n        ",
+  "className": "empty",
+});
+        
+    
+        var popup_0338abe2ba774ca4b062b91422698bf7 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_fe3b920c4f5ccd57fcecf99025fac216 = $(`<div id="html_fe3b920c4f5ccd57fcecf99025fac216" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 250px;">             <h4 style="margin: 0 0 10px 0;">Rank #22 - Score: 33.2/100</h4>             <p style="margin: 5px 0;"><b>Listing ID:</b> 1435755743772384999</p>         <p style='margin: 5px 0;'><b>Type:</b> private_room</p>             <p style='margin: 5px 0;'><b>Occupancy:</b> 103% / 100%</p>             <p style='margin: 10px 0 0 0;'>                 <a href="https://www.airbnb.com/rooms/1435755743772384999" target="_blank" style="color: #FF5A5F;">                     View on Airbnb →                 </a>             </p>         </div>         </div>`)[0];
+                popup_0338abe2ba774ca4b062b91422698bf7.setContent(html_fe3b920c4f5ccd57fcecf99025fac216);
+            
+        
+
+        marker_4912ab8f6e570d40ac9efa34d3ad65b9.bindPopup(popup_0338abe2ba774ca4b062b91422698bf7)
+        ;
+
+        
+    
+    
+                marker_4912ab8f6e570d40ac9efa34d3ad65b9.setIcon(div_icon_b7a394fc959349519ebee5ca55780d1a);
+            
+    
+            var marker_a0af9d1e66a445628d707956b643f4c6 = L.marker(
+                [30.272, -97.747],
+                {
+}
+            ).addTo(map_6c631a5b35f1277c0b5d66e0fd8ca7d0);
+        
+    
+            var div_icon_08f43155ed27670f3bc84ba7d23a36da = L.divIcon({
+  "html": "\n        \u003cdiv style=\"\n            background-color: #dc3545;\n            border: 2px solid white;\n            border-radius: 50%;\n            width: 32px;\n            height: 32px;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            font-weight: bold;\n            font-size: 14px;\n            color: white;\n            box-shadow: 0 2px 4px rgba(0,0,0,0.3);\n        \"\u003e23\u003c/div\u003e\n        ",
+  "className": "empty",
+});
+        
+    
+        var popup_63a61b15145db66d43792537d3b20594 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c48cde7b51a887ead6ebef0e9fd59abf = $(`<div id="html_c48cde7b51a887ead6ebef0e9fd59abf" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 250px;">             <h4 style="margin: 0 0 10px 0;">Rank #23 - Score: 31.0/100</h4>             <p style="margin: 5px 0;"><b>Listing ID:</b> 25454542</p>         <p style='margin: 5px 0;'><b>Price:</b> $394.10/night</p><p style='margin: 5px 0;'><b>Type:</b> entire_home</p><p style='margin: 5px 0;'><b>Rating:</b> ⭐ 4.5</p>             <p style='margin: 5px 0;'><b>Occupancy:</b> 100% / 97%</p>             <p style='margin: 10px 0 0 0;'>                 <a href="https://www.airbnb.com/rooms/25454542" target="_blank" style="color: #FF5A5F;">                     View on Airbnb →                 </a>             </p>         </div>         </div>`)[0];
+                popup_63a61b15145db66d43792537d3b20594.setContent(html_c48cde7b51a887ead6ebef0e9fd59abf);
+            
+        
+
+        marker_a0af9d1e66a445628d707956b643f4c6.bindPopup(popup_63a61b15145db66d43792537d3b20594)
+        ;
+
+        
+    
+    
+                marker_a0af9d1e66a445628d707956b643f4c6.setIcon(div_icon_08f43155ed27670f3bc84ba7d23a36da);
+            
+    
+            var marker_d00192c7dfbfe2abfa3d7a74200c767e = L.marker(
+                [30.26994, -97.74311],
+                {
+}
+            ).addTo(map_6c631a5b35f1277c0b5d66e0fd8ca7d0);
+        
+    
+            var div_icon_eee9f9c075c6692606223adc87f49afe = L.divIcon({
+  "html": "\n        \u003cdiv style=\"\n            background-color: #dc3545;\n            border: 2px solid white;\n            border-radius: 50%;\n            width: 32px;\n            height: 32px;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            font-weight: bold;\n            font-size: 14px;\n            color: white;\n            box-shadow: 0 2px 4px rgba(0,0,0,0.3);\n        \"\u003e24\u003c/div\u003e\n        ",
+  "className": "empty",
+});
+        
+    
+        var popup_d791261309d298f0ae61fb19f68ebeec = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0886f114630d5b35eb892ebbf6c4126b = $(`<div id="html_0886f114630d5b35eb892ebbf6c4126b" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 250px;">             <h4 style="margin: 0 0 10px 0;">Rank #24 - Score: 31.0/100</h4>             <p style="margin: 5px 0;"><b>Listing ID:</b> 988981411608995254</p>         <p style='margin: 5px 0;'><b>Price:</b> $394.10/night</p><p style='margin: 5px 0;'><b>Type:</b> entire_home</p>             <p style='margin: 5px 0;'><b>Occupancy:</b> 100% / 97%</p>             <p style='margin: 10px 0 0 0;'>                 <a href="https://www.airbnb.com/rooms/988981411608995254" target="_blank" style="color: #FF5A5F;">                     View on Airbnb →                 </a>             </p>         </div>         </div>`)[0];
+                popup_d791261309d298f0ae61fb19f68ebeec.setContent(html_0886f114630d5b35eb892ebbf6c4126b);
+            
+        
+
+        marker_d00192c7dfbfe2abfa3d7a74200c767e.bindPopup(popup_d791261309d298f0ae61fb19f68ebeec)
+        ;
+
+        
+    
+    
+                marker_d00192c7dfbfe2abfa3d7a74200c767e.setIcon(div_icon_eee9f9c075c6692606223adc87f49afe);
+            
+    
+            var marker_68f1115470a9477dbf092a152ea04944 = L.marker(
+                [30.26851, -97.74111],
+                {
+}
+            ).addTo(map_6c631a5b35f1277c0b5d66e0fd8ca7d0);
+        
+    
+            var div_icon_4a1d7bedd2e2c0becb4c6c6f23c1b73f = L.divIcon({
+  "html": "\n        \u003cdiv style=\"\n            background-color: #dc3545;\n            border: 2px solid white;\n            border-radius: 50%;\n            width: 32px;\n            height: 32px;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            font-weight: bold;\n            font-size: 14px;\n            color: white;\n            box-shadow: 0 2px 4px rgba(0,0,0,0.3);\n        \"\u003e25\u003c/div\u003e\n        ",
+  "className": "empty",
+});
+        
+    
+        var popup_23e97085fcf62f078d6f7d4b4502f28a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d802a310420a77ff14529a7faaa58896 = $(`<div id="html_d802a310420a77ff14529a7faaa58896" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 250px;">             <h4 style="margin: 0 0 10px 0;">Rank #25 - Score: 31.0/100</h4>             <p style="margin: 5px 0;"><b>Listing ID:</b> 988980990644717791</p>         <p style='margin: 5px 0;'><b>Price:</b> $394.10/night</p><p style='margin: 5px 0;'><b>Type:</b> entire_home</p>             <p style='margin: 5px 0;'><b>Occupancy:</b> 100% / 97%</p>             <p style='margin: 10px 0 0 0;'>                 <a href="https://www.airbnb.com/rooms/988980990644717791" target="_blank" style="color: #FF5A5F;">                     View on Airbnb →                 </a>             </p>         </div>         </div>`)[0];
+                popup_23e97085fcf62f078d6f7d4b4502f28a.setContent(html_d802a310420a77ff14529a7faaa58896);
+            
+        
+
+        marker_68f1115470a9477dbf092a152ea04944.bindPopup(popup_23e97085fcf62f078d6f7d4b4502f28a)
+        ;
+
+        
+    
+    
+                marker_68f1115470a9477dbf092a152ea04944.setIcon(div_icon_4a1d7bedd2e2c0becb4c6c6f23c1b73f);
+            
+    
+            var marker_fa0e280ed8cf3e93c18fe786726165a7 = L.marker(
+                [30.288, -97.767],
+                {
+}
+            ).addTo(map_6c631a5b35f1277c0b5d66e0fd8ca7d0);
+        
+    
+            var div_icon_7d043e1e6d4c203d9b8eb5bf7baa72ff = L.divIcon({
+  "html": "\n        \u003cdiv style=\"\n            background-color: #dc3545;\n            border: 2px solid white;\n            border-radius: 50%;\n            width: 32px;\n            height: 32px;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            font-weight: bold;\n            font-size: 14px;\n            color: white;\n            box-shadow: 0 2px 4px rgba(0,0,0,0.3);\n        \"\u003e26\u003c/div\u003e\n        ",
+  "className": "empty",
+});
+        
+    
+        var popup_1c26628003e6b11719d8bad0c9920938 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_60fb81b0e35c08aceeb2c79ebd376bec = $(`<div id="html_60fb81b0e35c08aceeb2c79ebd376bec" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 250px;">             <h4 style="margin: 0 0 10px 0;">Rank #26 - Score: 27.1/100</h4>             <p style="margin: 5px 0;"><b>Listing ID:</b> 867285036056943855</p>         <p style='margin: 5px 0;'><b>Price:</b> $266.00/night</p><p style='margin: 5px 0;'><b>Type:</b> private_room</p><p style='margin: 5px 0;'><b>Rating:</b> ⭐ 5.0</p>             <p style='margin: 5px 0;'><b>Occupancy:</b> 87% / 100%</p>             <p style='margin: 10px 0 0 0;'>                 <a href="https://www.airbnb.com/rooms/867285036056943855" target="_blank" style="color: #FF5A5F;">                     View on Airbnb →                 </a>             </p>         </div>         </div>`)[0];
+                popup_1c26628003e6b11719d8bad0c9920938.setContent(html_60fb81b0e35c08aceeb2c79ebd376bec);
+            
+        
+
+        marker_fa0e280ed8cf3e93c18fe786726165a7.bindPopup(popup_1c26628003e6b11719d8bad0c9920938)
+        ;
+
+        
+    
+    
+                marker_fa0e280ed8cf3e93c18fe786726165a7.setIcon(div_icon_7d043e1e6d4c203d9b8eb5bf7baa72ff);
+            
+    
+            var marker_7b4bca4dcfc06a213bb52c2fd55101a1 = L.marker(
+                [30.229087001292253, -97.79346541636028],
+                {
+}
+            ).addTo(map_6c631a5b35f1277c0b5d66e0fd8ca7d0);
+        
+    
+            var div_icon_4be2cc13cc4fef07b855302c94ab19a0 = L.divIcon({
+  "html": "\n        \u003cdiv style=\"\n            background-color: #dc3545;\n            border: 2px solid white;\n            border-radius: 50%;\n            width: 32px;\n            height: 32px;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            font-weight: bold;\n            font-size: 14px;\n            color: white;\n            box-shadow: 0 2px 4px rgba(0,0,0,0.3);\n        \"\u003e27\u003c/div\u003e\n        ",
+  "className": "empty",
+});
+        
+    
+        var popup_97f4de4e523e2af92652b51835c3dc50 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_27f18b3ac342c19d51f84fdb8c91ba8d = $(`<div id="html_27f18b3ac342c19d51f84fdb8c91ba8d" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 250px;">             <h4 style="margin: 0 0 10px 0;">Rank #27 - Score: 22.3/100</h4>             <p style="margin: 5px 0;"><b>Listing ID:</b> 1369203126386677566</p>         <p style='margin: 5px 0;'><b>Price:</b> $181.26/night</p><p style='margin: 5px 0;'><b>Type:</b> entire_home</p><p style='margin: 5px 0;'><b>Rating:</b> ⭐ 4.5</p>             <p style='margin: 5px 0;'><b>Occupancy:</b> 77% / 90%</p>             <p style='margin: 10px 0 0 0;'>                 <a href="https://www.airbnb.com/rooms/1369203126386677566" target="_blank" style="color: #FF5A5F;">                     View on Airbnb →                 </a>             </p>         </div>         </div>`)[0];
+                popup_97f4de4e523e2af92652b51835c3dc50.setContent(html_27f18b3ac342c19d51f84fdb8c91ba8d);
+            
+        
+
+        marker_7b4bca4dcfc06a213bb52c2fd55101a1.bindPopup(popup_97f4de4e523e2af92652b51835c3dc50)
+        ;
+
+        
+    
+    
+                marker_7b4bca4dcfc06a213bb52c2fd55101a1.setIcon(div_icon_4be2cc13cc4fef07b855302c94ab19a0);
+            
+    
+            var marker_ebb7f840b2cffbfd548812588e044963 = L.marker(
+                [30.2706, -97.722],
+                {
+}
+            ).addTo(map_6c631a5b35f1277c0b5d66e0fd8ca7d0);
+        
+    
+            var div_icon_7e7d666dd161a9342476c0405448f419 = L.divIcon({
+  "html": "\n        \u003cdiv style=\"\n            background-color: #dc3545;\n            border: 2px solid white;\n            border-radius: 50%;\n            width: 32px;\n            height: 32px;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            font-weight: bold;\n            font-size: 14px;\n            color: white;\n            box-shadow: 0 2px 4px rgba(0,0,0,0.3);\n        \"\u003e28\u003c/div\u003e\n        ",
+  "className": "empty",
+});
+        
+    
+        var popup_8e2ddde09c9239b37da3dcb957d13622 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a4561dcfcf3728d6be74dda4132242da = $(`<div id="html_a4561dcfcf3728d6be74dda4132242da" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 250px;">             <h4 style="margin: 0 0 10px 0;">Rank #28 - Score: 19.2/100</h4>             <p style="margin: 5px 0;"><b>Listing ID:</b> 23644254</p>         <p style='margin: 5px 0;'><b>Price:</b> $409.30/night</p><p style='margin: 5px 0;'><b>Type:</b> entire_home</p><p style='margin: 5px 0;'><b>Rating:</b> ⭐ 5.0</p>             <p style='margin: 5px 0;'><b>Occupancy:</b> 77% / 77%</p>             <p style='margin: 10px 0 0 0;'>                 <a href="https://www.airbnb.com/rooms/23644254" target="_blank" style="color: #FF5A5F;">                     View on Airbnb →                 </a>             </p>         </div>         </div>`)[0];
+                popup_8e2ddde09c9239b37da3dcb957d13622.setContent(html_a4561dcfcf3728d6be74dda4132242da);
+            
+        
+
+        marker_ebb7f840b2cffbfd548812588e044963.bindPopup(popup_8e2ddde09c9239b37da3dcb957d13622)
+        ;
+
+        
+    
+    
+                marker_ebb7f840b2cffbfd548812588e044963.setIcon(div_icon_7e7d666dd161a9342476c0405448f419);
+            
+    
+            var marker_f32ebe863fac480aa5a137f8d81f8859 = L.marker(
+                [30.25203, -97.72068],
+                {
+}
+            ).addTo(map_6c631a5b35f1277c0b5d66e0fd8ca7d0);
+        
+    
+            var div_icon_02ba641e097e00dfa132559d8208637a = L.divIcon({
+  "html": "\n        \u003cdiv style=\"\n            background-color: #dc3545;\n            border: 2px solid white;\n            border-radius: 50%;\n            width: 32px;\n            height: 32px;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            font-weight: bold;\n            font-size: 14px;\n            color: white;\n            box-shadow: 0 2px 4px rgba(0,0,0,0.3);\n        \"\u003e29\u003c/div\u003e\n        ",
+  "className": "empty",
+});
+        
+    
+        var popup_942adbf7e6fcfec6df65997617e685c8 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d2e17f6544c01bf800e2f884a2d8d5c3 = $(`<div id="html_d2e17f6544c01bf800e2f884a2d8d5c3" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 250px;">             <h4 style="margin: 0 0 10px 0;">Rank #29 - Score: 18.0/100</h4>             <p style="margin: 5px 0;"><b>Listing ID:</b> 1302155361861567312</p>         <p style='margin: 5px 0;'><b>Price:</b> $1073.00/night</p><p style='margin: 5px 0;'><b>Type:</b> entire_home</p><p style='margin: 5px 0;'><b>Rating:</b> ⭐ 5.0</p>             <p style='margin: 5px 0;'><b>Occupancy:</b> 80% / 60%</p>             <p style='margin: 10px 0 0 0;'>                 <a href="https://www.airbnb.com/rooms/1302155361861567312" target="_blank" style="color: #FF5A5F;">                     View on Airbnb →                 </a>             </p>         </div>         </div>`)[0];
+                popup_942adbf7e6fcfec6df65997617e685c8.setContent(html_d2e17f6544c01bf800e2f884a2d8d5c3);
+            
+        
+
+        marker_f32ebe863fac480aa5a137f8d81f8859.bindPopup(popup_942adbf7e6fcfec6df65997617e685c8)
+        ;
+
+        
+    
+    
+                marker_f32ebe863fac480aa5a137f8d81f8859.setIcon(div_icon_02ba641e097e00dfa132559d8208637a);
+            
+    
+            var marker_48296921c40d414ef9dff16bc2115563 = L.marker(
+                [30.257, -97.748],
+                {
+}
+            ).addTo(map_6c631a5b35f1277c0b5d66e0fd8ca7d0);
+        
+    
+            var div_icon_e1d58aaee347adccc6862324ace6630f = L.divIcon({
+  "html": "\n        \u003cdiv style=\"\n            background-color: #dc3545;\n            border: 2px solid white;\n            border-radius: 50%;\n            width: 32px;\n            height: 32px;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            font-weight: bold;\n            font-size: 14px;\n            color: white;\n            box-shadow: 0 2px 4px rgba(0,0,0,0.3);\n        \"\u003e30\u003c/div\u003e\n        ",
+  "className": "empty",
+});
+        
+    
+        var popup_90c9768b67037ee29b634c40cb7e1227 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e168ac350dd6ce094a769b87204d1919 = $(`<div id="html_e168ac350dd6ce094a769b87204d1919" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 250px;">             <h4 style="margin: 0 0 10px 0;">Rank #30 - Score: 15.6/100</h4>             <p style="margin: 5px 0;"><b>Listing ID:</b> 809364805350339917</p>         <p style='margin: 5px 0;'><b>Price:</b> $152.45/night</p><p style='margin: 5px 0;'><b>Type:</b> entire_home</p><p style='margin: 5px 0;'><b>Rating:</b> ⭐ 4.5</p>             <p style='margin: 5px 0;'><b>Occupancy:</b> 77% / 57%</p>             <p style='margin: 10px 0 0 0;'>                 <a href="https://www.airbnb.com/rooms/809364805350339917" target="_blank" style="color: #FF5A5F;">                     View on Airbnb →                 </a>             </p>         </div>         </div>`)[0];
+                popup_90c9768b67037ee29b634c40cb7e1227.setContent(html_e168ac350dd6ce094a769b87204d1919);
+            
+        
+
+        marker_48296921c40d414ef9dff16bc2115563.bindPopup(popup_90c9768b67037ee29b634c40cb7e1227)
+        ;
+
+        
+    
+    
+                marker_48296921c40d414ef9dff16bc2115563.setIcon(div_icon_e1d58aaee347adccc6862324ace6630f);
+            
+</script>
+</html>

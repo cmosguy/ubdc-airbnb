@@ -1,0 +1,1790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airbnb Market Report: Austin, TX</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .header {
+            background: linear-gradient(135deg, #FF5A5F 0%, #FF385C 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        h1 {
+            margin: 0 0 10px 0;
+            font-size: 2.5em;
+        }
+        .report-date {
+            opacity: 0.9;
+            font-size: 1.1em;
+        }
+        .section {
+            background: white;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #FF5A5F;
+            border-bottom: 3px solid #FF5A5F;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .stat-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #FF5A5F;
+        }
+        .stat-label {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 5px;
+        }
+        .stat-value {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #333;
+        }
+        .map-container {
+            margin: 20px 0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th {
+            background-color: #FF5A5F;
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+        }
+        td {
+            padding: 10px 12px;
+            border-bottom: 1px solid #ddd;
+        }
+        tr:hover {
+            background-color: #f8f9fa;
+        }
+        .quality-excellent {
+            color: #28a745;
+            font-weight: bold;
+        }
+        .quality-good {
+            color: #ffc107;
+            font-weight: bold;
+        }
+        .quality-fair {
+            color: #dc3545;
+            font-weight: bold;
+        }
+        a {
+            color: #FF5A5F;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🏠 Airbnb Market Research</h1>
+        <div style="font-size: 1.5em; margin: 10px 0;">Austin, TX</div>
+        <div class="report-date">Generated: November 12, 2025</div>
+    </div>
+
+    <div class="section">
+        <h2>📊 Executive Summary</h2>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-label">Total Listings</div>
+                <div class="stat-value">30</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Avg Quality Score</div>
+                <div class="stat-value">47.7</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Avg Price/Night</div>
+                <div class="stat-value">$298</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Avg Occupancy (30d)</div>
+                <div class="stat-value">92.4%</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Avg Rating</div>
+                <div class="stat-value">4.78 ⭐</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Superhosts</div>
+                <div class="stat-value">16 (53.3%)</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>🗺️ Geographic Distribution</h2>
+        <p>The map below shows the geographic distribution of high-quality Airbnb listings in Austin, TX. 
+        Listings are color-coded by their quality score:</p>
+        <ul>
+            <li><span class="quality-excellent">● Green (70-100)</span> - Excellent properties</li>
+            <li><span class="quality-good">● Yellow (50-69)</span> - Good properties</li>
+            <li><span class="quality-fair">● Red (0-49)</span> - Properties that may need review</li>
+        </ul>
+        <div class="map-container">
+            <div style="width:100%;"><div style="position:relative;width:100%;height:0;padding-bottom:60%;"><span style="color:#565656">Make this Notebook Trusted to load map: File -> Trust Notebook</span><iframe srcdoc="&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    
+    &lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=UTF-8&quot; /&gt;
+    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;https://code.jquery.com/jquery-3.7.1.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js&quot;&gt;&lt;/script&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css&quot;/&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css&quot;/&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css&quot;/&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css&quot;/&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css&quot;/&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css&quot;/&gt;
+    
+            &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no&quot; /&gt;
+            &lt;style&gt;
+                #map_44d92a6948255219fd743cd54fdfcb3e {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            &lt;/style&gt;
+
+            &lt;style&gt;html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            &lt;/style&gt;
+
+            &lt;style&gt;#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            &lt;/style&gt;
+
+            &lt;script&gt;
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            &lt;/script&gt;
+
+        
+&lt;/head&gt;
+&lt;body&gt;
+    
+    
+    &lt;div style=&quot;position: fixed; 
+                bottom: 50px; right: 50px; width: 200px; height: 120px; 
+                background-color: white; z-index:9999; font-size:14px;
+                border:2px solid grey; border-radius: 5px; padding: 10px&quot;&gt;
+        &lt;p style=&quot;margin: 0 0 10px 0; font-weight: bold;&quot;&gt;Quality Score Legend&lt;/p&gt;
+        &lt;p style=&quot;margin: 5px 0;&quot;&gt;&lt;span style=&quot;color: green;&quot;&gt;●&lt;/span&gt; High (70-100)&lt;/p&gt;
+        &lt;p style=&quot;margin: 5px 0;&quot;&gt;&lt;span style=&quot;color: #FFD700;&quot;&gt;●&lt;/span&gt; Medium (50-69)&lt;/p&gt;
+        &lt;p style=&quot;margin: 5px 0;&quot;&gt;&lt;span style=&quot;color: red;&quot;&gt;●&lt;/span&gt; Low (0-49)&lt;/p&gt;
+    &lt;/div&gt;
+    
+    
+            &lt;div class=&quot;folium-map&quot; id=&quot;map_44d92a6948255219fd743cd54fdfcb3e&quot; &gt;&lt;/div&gt;
+        
+&lt;/body&gt;
+&lt;script&gt;
+    
+    
+            var map_44d92a6948255219fd743cd54fdfcb3e = L.map(
+                &quot;map_44d92a6948255219fd743cd54fdfcb3e&quot;,
+                {
+                    center: [30.2710115, -97.71259799999999],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  &quot;zoom&quot;: 13,
+  &quot;zoomControl&quot;: true,
+  &quot;preferCanvas&quot;: false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_d5c007bdec63bea1e58fa325b5c1dbfc = L.tileLayer(
+                &quot;https://tile.openstreetmap.org/{z}/{x}/{y}.png&quot;,
+                {
+  &quot;minZoom&quot;: 0,
+  &quot;maxZoom&quot;: 19,
+  &quot;maxNativeZoom&quot;: 19,
+  &quot;noWrap&quot;: false,
+  &quot;attribution&quot;: &quot;\u0026copy; \u003ca href=\&quot;https://www.openstreetmap.org/copyright\&quot;\u003eOpenStreetMap\u003c/a\u003e contributors&quot;,
+  &quot;subdomains&quot;: &quot;abc&quot;,
+  &quot;detectRetina&quot;: false,
+  &quot;tms&quot;: false,
+  &quot;opacity&quot;: 1,
+}
+
+            );
+        
+    
+            tile_layer_d5c007bdec63bea1e58fa325b5c1dbfc.addTo(map_44d92a6948255219fd743cd54fdfcb3e);
+        
+    
+            map_44d92a6948255219fd743cd54fdfcb3e.fitBounds(
+                [[30.20755799999999, -97.80838499999999], [30.334465000000005, -97.616811]],
+                {}
+            );
+        
+    
+            var marker_244798700fc66669b32b72e6d1db436d = L.marker(
+                [30.2697, -97.73457],
+                {
+}
+            ).addTo(map_44d92a6948255219fd743cd54fdfcb3e);
+        
+    
+            var div_icon_d429536cea6732ae7ab2db1b8409c9bc = L.divIcon({
+  &quot;html&quot;: &quot;\n        \u003cdiv style=\&quot;\n            background-color: #28a745;\n            border: 2px solid white;\n            border-radius: 50%;\n            width: 32px;\n            height: 32px;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            font-weight: bold;\n            font-size: 14px;\n            color: white;\n            box-shadow: 0 2px 4px rgba(0,0,0,0.3);\n        \&quot;\u003e1\u003c/div\u003e\n        &quot;,
+  &quot;className&quot;: &quot;empty&quot;,
+});
+        
+    
+        var popup_51ba0f91e308e0189f87a92fb9810aa3 = L.popup({
+  &quot;maxWidth&quot;: 300,
+});
+
+        
+            
+                var html_15fb431d4f1e021b6e2cc6d53723c6fb = $(`&lt;div id=&quot;html_15fb431d4f1e021b6e2cc6d53723c6fb&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;         &lt;div style=&quot;font-family: Arial; width: 250px;&quot;&gt;             &lt;h4 style=&quot;margin: 0 0 10px 0;&quot;&gt;Rank #1 - Score: 100.0/100&lt;/h4&gt;             &lt;p style=&quot;margin: 5px 0;&quot;&gt;&lt;b&gt;Listing ID:&lt;/b&gt; 1178894856859586709&lt;/p&gt;         &lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Type:&lt;/b&gt; private_room&lt;/p&gt;&lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Rating:&lt;/b&gt; ⭐ 5.0&lt;/p&gt;             &lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Occupancy:&lt;/b&gt; 103% / 100%&lt;/p&gt;             &lt;p style=&#x27;margin: 10px 0 0 0;&#x27;&gt;                 &lt;a href=&quot;https://www.airbnb.com/rooms/1178894856859586709&quot; target=&quot;_blank&quot; style=&quot;color: #FF5A5F;&quot;&gt;                     View on Airbnb →                 &lt;/a&gt;             &lt;/p&gt;         &lt;/div&gt;         &lt;/div&gt;`)[0];
+                popup_51ba0f91e308e0189f87a92fb9810aa3.setContent(html_15fb431d4f1e021b6e2cc6d53723c6fb);
+            
+        
+
+        marker_244798700fc66669b32b72e6d1db436d.bindPopup(popup_51ba0f91e308e0189f87a92fb9810aa3)
+        ;
+
+        
+    
+    
+                marker_244798700fc66669b32b72e6d1db436d.setIcon(div_icon_d429536cea6732ae7ab2db1b8409c9bc);
+            
+    
+            var marker_43a5ed9e65cf8b502787ddfca304ad1b = L.marker(
+                [30.26871, -97.73616],
+                {
+}
+            ).addTo(map_44d92a6948255219fd743cd54fdfcb3e);
+        
+    
+            var div_icon_f46795c04b38f57f6dc825956ee8413d = L.divIcon({
+  &quot;html&quot;: &quot;\n        \u003cdiv style=\&quot;\n            background-color: #28a745;\n            border: 2px solid white;\n            border-radius: 50%;\n            width: 32px;\n            height: 32px;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            font-weight: bold;\n            font-size: 14px;\n            color: white;\n            box-shadow: 0 2px 4px rgba(0,0,0,0.3);\n        \&quot;\u003e2\u003c/div\u003e\n        &quot;,
+  &quot;className&quot;: &quot;empty&quot;,
+});
+        
+    
+        var popup_9594cb6b6ab9004a828990166c85a0fb = L.popup({
+  &quot;maxWidth&quot;: 300,
+});
+
+        
+            
+                var html_30584bef9f35c7d7d87c010343496b75 = $(`&lt;div id=&quot;html_30584bef9f35c7d7d87c010343496b75&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;         &lt;div style=&quot;font-family: Arial; width: 250px;&quot;&gt;             &lt;h4 style=&quot;margin: 0 0 10px 0;&quot;&gt;Rank #2 - Score: 100.0/100&lt;/h4&gt;             &lt;p style=&quot;margin: 5px 0;&quot;&gt;&lt;b&gt;Listing ID:&lt;/b&gt; 1141339553870359190&lt;/p&gt;         &lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Type:&lt;/b&gt; private_room&lt;/p&gt;&lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Rating:&lt;/b&gt; ⭐ 4.5&lt;/p&gt;             &lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Occupancy:&lt;/b&gt; 103% / 100%&lt;/p&gt;             &lt;p style=&#x27;margin: 10px 0 0 0;&#x27;&gt;                 &lt;a href=&quot;https://www.airbnb.com/rooms/1141339553870359190&quot; target=&quot;_blank&quot; style=&quot;color: #FF5A5F;&quot;&gt;                     View on Airbnb →                 &lt;/a&gt;             &lt;/p&gt;         &lt;/div&gt;         &lt;/div&gt;`)[0];
+                popup_9594cb6b6ab9004a828990166c85a0fb.setContent(html_30584bef9f35c7d7d87c010343496b75);
+            
+        
+
+        marker_43a5ed9e65cf8b502787ddfca304ad1b.bindPopup(popup_9594cb6b6ab9004a828990166c85a0fb)
+        ;
+
+        
+    
+    
+                marker_43a5ed9e65cf8b502787ddfca304ad1b.setIcon(div_icon_f46795c04b38f57f6dc825956ee8413d);
+            
+    
+            var marker_9cb9b2b49ba4983cd7dbd90b4c70c88b = L.marker(
+                [30.2694, -97.73314],
+                {
+}
+            ).addTo(map_44d92a6948255219fd743cd54fdfcb3e);
+        
+    
+            var div_icon_35e908121d6d85a98209daa5d5ede7b3 = L.divIcon({
+  &quot;html&quot;: &quot;\n        \u003cdiv style=\&quot;\n            background-color: #28a745;\n            border: 2px solid white;\n            border-radius: 50%;\n            width: 32px;\n            height: 32px;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            font-weight: bold;\n            font-size: 14px;\n            color: white;\n            box-shadow: 0 2px 4px rgba(0,0,0,0.3);\n        \&quot;\u003e3\u003c/div\u003e\n        &quot;,
+  &quot;className&quot;: &quot;empty&quot;,
+});
+        
+    
+        var popup_c02fad4fac1c1d85733fb18111743831 = L.popup({
+  &quot;maxWidth&quot;: 300,
+});
+
+        
+            
+                var html_d368fcd39735571de32335f49b98471d = $(`&lt;div id=&quot;html_d368fcd39735571de32335f49b98471d&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;         &lt;div style=&quot;font-family: Arial; width: 250px;&quot;&gt;             &lt;h4 style=&quot;margin: 0 0 10px 0;&quot;&gt;Rank #3 - Score: 90.5/100&lt;/h4&gt;             &lt;p style=&quot;margin: 5px 0;&quot;&gt;&lt;b&gt;Listing ID:&lt;/b&gt; 1178912935006821554&lt;/p&gt;         &lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Type:&lt;/b&gt; private_room&lt;/p&gt;&lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Rating:&lt;/b&gt; ⭐ 5.0&lt;/p&gt;             &lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Occupancy:&lt;/b&gt; 103% / 100%&lt;/p&gt;             &lt;p style=&#x27;margin: 10px 0 0 0;&#x27;&gt;                 &lt;a href=&quot;https://www.airbnb.com/rooms/1178912935006821554&quot; target=&quot;_blank&quot; style=&quot;color: #FF5A5F;&quot;&gt;                     View on Airbnb →                 &lt;/a&gt;             &lt;/p&gt;         &lt;/div&gt;         &lt;/div&gt;`)[0];
+                popup_c02fad4fac1c1d85733fb18111743831.setContent(html_d368fcd39735571de32335f49b98471d);
+            
+        
+
+        marker_9cb9b2b49ba4983cd7dbd90b4c70c88b.bindPopup(popup_c02fad4fac1c1d85733fb18111743831)
+        ;
+
+        
+    
+    
+                marker_9cb9b2b49ba4983cd7dbd90b4c70c88b.setIcon(div_icon_35e908121d6d85a98209daa5d5ede7b3);
+            
+    
+            var marker_0244352e2906c01735f4b938536d4ecb = L.marker(
+                [30.27045, -97.73814],
+                {
+}
+            ).addTo(map_44d92a6948255219fd743cd54fdfcb3e);
+        
+    
+            var div_icon_bf179cfb485194d8e74ad2a1e98b3d30 = L.divIcon({
+  &quot;html&quot;: &quot;\n        \u003cdiv style=\&quot;\n            background-color: #28a745;\n            border: 2px solid white;\n            border-radius: 50%;\n            width: 32px;\n            height: 32px;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            font-weight: bold;\n            font-size: 14px;\n            color: white;\n            box-shadow: 0 2px 4px rgba(0,0,0,0.3);\n        \&quot;\u003e4\u003c/div\u003e\n        &quot;,
+  &quot;className&quot;: &quot;empty&quot;,
+});
+        
+    
+        var popup_dfe144997d81cdf43b490c747d450e91 = L.popup({
+  &quot;maxWidth&quot;: 300,
+});
+
+        
+            
+                var html_0becfbdb76dbf2940f7981a9a9f7c0ee = $(`&lt;div id=&quot;html_0becfbdb76dbf2940f7981a9a9f7c0ee&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;         &lt;div style=&quot;font-family: Arial; width: 250px;&quot;&gt;             &lt;h4 style=&quot;margin: 0 0 10px 0;&quot;&gt;Rank #4 - Score: 83.3/100&lt;/h4&gt;             &lt;p style=&quot;margin: 5px 0;&quot;&gt;&lt;b&gt;Listing ID:&lt;/b&gt; 980695598307202293&lt;/p&gt;         &lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Type:&lt;/b&gt; private_room&lt;/p&gt;&lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Rating:&lt;/b&gt; ⭐ 4.5&lt;/p&gt;             &lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Occupancy:&lt;/b&gt; 103% / 100%&lt;/p&gt;             &lt;p style=&#x27;margin: 10px 0 0 0;&#x27;&gt;                 &lt;a href=&quot;https://www.airbnb.com/rooms/980695598307202293&quot; target=&quot;_blank&quot; style=&quot;color: #FF5A5F;&quot;&gt;                     View on Airbnb →                 &lt;/a&gt;             &lt;/p&gt;         &lt;/div&gt;         &lt;/div&gt;`)[0];
+                popup_dfe144997d81cdf43b490c747d450e91.setContent(html_0becfbdb76dbf2940f7981a9a9f7c0ee);
+            
+        
+
+        marker_0244352e2906c01735f4b938536d4ecb.bindPopup(popup_dfe144997d81cdf43b490c747d450e91)
+        ;
+
+        
+    
+    
+                marker_0244352e2906c01735f4b938536d4ecb.setIcon(div_icon_bf179cfb485194d8e74ad2a1e98b3d30);
+            
+    
+            var marker_2b5c3262d95211cd3d0e6adfe775a38d = L.marker(
+                [30.26869, -97.73756],
+                {
+}
+            ).addTo(map_44d92a6948255219fd743cd54fdfcb3e);
+        
+    
+            var div_icon_dc5e0b800b883906abb40b51cde1e3dd = L.divIcon({
+  &quot;html&quot;: &quot;\n        \u003cdiv style=\&quot;\n            background-color: #28a745;\n            border: 2px solid white;\n            border-radius: 50%;\n            width: 32px;\n            height: 32px;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            font-weight: bold;\n            font-size: 14px;\n            color: white;\n            box-shadow: 0 2px 4px rgba(0,0,0,0.3);\n        \&quot;\u003e5\u003c/div\u003e\n        &quot;,
+  &quot;className&quot;: &quot;empty&quot;,
+});
+        
+    
+        var popup_5906d174ed5907f8086703b1212bdc79 = L.popup({
+  &quot;maxWidth&quot;: 300,
+});
+
+        
+            
+                var html_0d0fcf0abc3f1476bfb43b92435de6f5 = $(`&lt;div id=&quot;html_0d0fcf0abc3f1476bfb43b92435de6f5&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;         &lt;div style=&quot;font-family: Arial; width: 250px;&quot;&gt;             &lt;h4 style=&quot;margin: 0 0 10px 0;&quot;&gt;Rank #5 - Score: 82.1/100&lt;/h4&gt;             &lt;p style=&quot;margin: 5px 0;&quot;&gt;&lt;b&gt;Listing ID:&lt;/b&gt; 48867583&lt;/p&gt;         &lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Type:&lt;/b&gt; private_room&lt;/p&gt;&lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Rating:&lt;/b&gt; ⭐ 5.0&lt;/p&gt;             &lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Occupancy:&lt;/b&gt; 103% / 100%&lt;/p&gt;             &lt;p style=&#x27;margin: 10px 0 0 0;&#x27;&gt;                 &lt;a href=&quot;https://www.airbnb.com/rooms/48867583&quot; target=&quot;_blank&quot; style=&quot;color: #FF5A5F;&quot;&gt;                     View on Airbnb →                 &lt;/a&gt;             &lt;/p&gt;         &lt;/div&gt;         &lt;/div&gt;`)[0];
+                popup_5906d174ed5907f8086703b1212bdc79.setContent(html_0d0fcf0abc3f1476bfb43b92435de6f5);
+            
+        
+
+        marker_2b5c3262d95211cd3d0e6adfe775a38d.bindPopup(popup_5906d174ed5907f8086703b1212bdc79)
+        ;
+
+        
+    
+    
+                marker_2b5c3262d95211cd3d0e6adfe775a38d.setIcon(div_icon_dc5e0b800b883906abb40b51cde1e3dd);
+            
+    
+            var marker_00ff412e61c0f9b2413db1d5bf67916f = L.marker(
+                [30.22702, -97.73217],
+                {
+}
+            ).addTo(map_44d92a6948255219fd743cd54fdfcb3e);
+        
+    
+            var div_icon_13f18828d4e42d1bda4422f82f632951 = L.divIcon({
+  &quot;html&quot;: &quot;\n        \u003cdiv style=\&quot;\n            background-color: #28a745;\n            border: 2px solid white;\n            border-radius: 50%;\n            width: 32px;\n            height: 32px;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            font-weight: bold;\n            font-size: 14px;\n            color: white;\n            box-shadow: 0 2px 4px rgba(0,0,0,0.3);\n        \&quot;\u003e6\u003c/div\u003e\n        &quot;,
+  &quot;className&quot;: &quot;empty&quot;,
+});
+        
+    
+        var popup_63fc7d2c2ec55c2626650632f5683c2e = L.popup({
+  &quot;maxWidth&quot;: 300,
+});
+
+        
+            
+                var html_3c912abafcc35386c16fe11c0d0ef1d2 = $(`&lt;div id=&quot;html_3c912abafcc35386c16fe11c0d0ef1d2&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;         &lt;div style=&quot;font-family: Arial; width: 250px;&quot;&gt;             &lt;h4 style=&quot;margin: 0 0 10px 0;&quot;&gt;Rank #6 - Score: 70.7/100&lt;/h4&gt;             &lt;p style=&quot;margin: 5px 0;&quot;&gt;&lt;b&gt;Listing ID:&lt;/b&gt; 778370358360742174&lt;/p&gt;         &lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Type:&lt;/b&gt; entire_home&lt;/p&gt;&lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Rating:&lt;/b&gt; ⭐ 5.0&lt;/p&gt;             &lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Occupancy:&lt;/b&gt; 103% / 100%&lt;/p&gt;             &lt;p style=&#x27;margin: 10px 0 0 0;&#x27;&gt;                 &lt;a href=&quot;https://www.airbnb.com/rooms/778370358360742174&quot; target=&quot;_blank&quot; style=&quot;color: #FF5A5F;&quot;&gt;                     View on Airbnb →                 &lt;/a&gt;             &lt;/p&gt;         &lt;/div&gt;         &lt;/div&gt;`)[0];
+                popup_63fc7d2c2ec55c2626650632f5683c2e.setContent(html_3c912abafcc35386c16fe11c0d0ef1d2);
+            
+        
+
+        marker_00ff412e61c0f9b2413db1d5bf67916f.bindPopup(popup_63fc7d2c2ec55c2626650632f5683c2e)
+        ;
+
+        
+    
+    
+                marker_00ff412e61c0f9b2413db1d5bf67916f.setIcon(div_icon_13f18828d4e42d1bda4422f82f632951);
+            
+    
+            var marker_da81a5ffdf57549c1d96c63b64d7868c = L.marker(
+                [30.27956, -97.7414],
+                {
+}
+            ).addTo(map_44d92a6948255219fd743cd54fdfcb3e);
+        
+    
+            var div_icon_7f3a23f8edb3b3da551c028467a0fce6 = L.divIcon({
+  &quot;html&quot;: &quot;\n        \u003cdiv style=\&quot;\n            background-color: #ffc107;\n            border: 2px solid white;\n            border-radius: 50%;\n            width: 32px;\n            height: 32px;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            font-weight: bold;\n            font-size: 14px;\n            color: black;\n            box-shadow: 0 2px 4px rgba(0,0,0,0.3);\n        \&quot;\u003e7\u003c/div\u003e\n        &quot;,
+  &quot;className&quot;: &quot;empty&quot;,
+});
+        
+    
+        var popup_b212df2fcc1057e1b14dd062967eea63 = L.popup({
+  &quot;maxWidth&quot;: 300,
+});
+
+        
+            
+                var html_0f9eb48397d54661c17c17876c3b0d55 = $(`&lt;div id=&quot;html_0f9eb48397d54661c17c17876c3b0d55&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;         &lt;div style=&quot;font-family: Arial; width: 250px;&quot;&gt;             &lt;h4 style=&quot;margin: 0 0 10px 0;&quot;&gt;Rank #7 - Score: 68.8/100&lt;/h4&gt;             &lt;p style=&quot;margin: 5px 0;&quot;&gt;&lt;b&gt;Listing ID:&lt;/b&gt; 907876551564869578&lt;/p&gt;         &lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Type:&lt;/b&gt; entire_home&lt;/p&gt;&lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Rating:&lt;/b&gt; ⭐ 5.0&lt;/p&gt;             &lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Occupancy:&lt;/b&gt; 103% / 100%&lt;/p&gt;             &lt;p style=&#x27;margin: 10px 0 0 0;&#x27;&gt;                 &lt;a href=&quot;https://www.airbnb.com/rooms/907876551564869578&quot; target=&quot;_blank&quot; style=&quot;color: #FF5A5F;&quot;&gt;                     View on Airbnb →                 &lt;/a&gt;             &lt;/p&gt;         &lt;/div&gt;         &lt;/div&gt;`)[0];
+                popup_b212df2fcc1057e1b14dd062967eea63.setContent(html_0f9eb48397d54661c17c17876c3b0d55);
+            
+        
+
+        marker_da81a5ffdf57549c1d96c63b64d7868c.bindPopup(popup_b212df2fcc1057e1b14dd062967eea63)
+        ;
+
+        
+    
+    
+                marker_da81a5ffdf57549c1d96c63b64d7868c.setIcon(div_icon_7f3a23f8edb3b3da551c028467a0fce6);
+            
+    
+            var marker_673e9cb4c13f1ae3efda58ccfcdc0645 = L.marker(
+                [30.27278, -97.7392],
+                {
+}
+            ).addTo(map_44d92a6948255219fd743cd54fdfcb3e);
+        
+    
+            var div_icon_0c7431a618da1013ebfad14f4851af0a = L.divIcon({
+  &quot;html&quot;: &quot;\n        \u003cdiv style=\&quot;\n            background-color: #ffc107;\n            border: 2px solid white;\n            border-radius: 50%;\n            width: 32px;\n            height: 32px;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            font-weight: bold;\n            font-size: 14px;\n            color: black;\n            box-shadow: 0 2px 4px rgba(0,0,0,0.3);\n        \&quot;\u003e8\u003c/div\u003e\n        &quot;,
+  &quot;className&quot;: &quot;empty&quot;,
+});
+        
+    
+        var popup_a8227bd993b70ef7c4ee37e90ee2a722 = L.popup({
+  &quot;maxWidth&quot;: 300,
+});
+
+        
+            
+                var html_5cc052e8d428383d65173572831458c9 = $(`&lt;div id=&quot;html_5cc052e8d428383d65173572831458c9&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;         &lt;div style=&quot;font-family: Arial; width: 250px;&quot;&gt;             &lt;h4 style=&quot;margin: 0 0 10px 0;&quot;&gt;Rank #8 - Score: 67.2/100&lt;/h4&gt;             &lt;p style=&quot;margin: 5px 0;&quot;&gt;&lt;b&gt;Listing ID:&lt;/b&gt; 1548972645560541601&lt;/p&gt;         &lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Type:&lt;/b&gt; private_room&lt;/p&gt;             &lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Occupancy:&lt;/b&gt; 103% / 100%&lt;/p&gt;             &lt;p style=&#x27;margin: 10px 0 0 0;&#x27;&gt;                 &lt;a href=&quot;https://www.airbnb.com/rooms/1548972645560541601&quot; target=&quot;_blank&quot; style=&quot;color: #FF5A5F;&quot;&gt;                     View on Airbnb →                 &lt;/a&gt;             &lt;/p&gt;         &lt;/div&gt;         &lt;/div&gt;`)[0];
+                popup_a8227bd993b70ef7c4ee37e90ee2a722.setContent(html_5cc052e8d428383d65173572831458c9);
+            
+        
+
+        marker_673e9cb4c13f1ae3efda58ccfcdc0645.bindPopup(popup_a8227bd993b70ef7c4ee37e90ee2a722)
+        ;
+
+        
+    
+    
+                marker_673e9cb4c13f1ae3efda58ccfcdc0645.setIcon(div_icon_0c7431a618da1013ebfad14f4851af0a);
+            
+    
+            var marker_91fbc86ea3797ca5372c447c76e8ed73 = L.marker(
+                [30.26197982704759, -97.70556114927456],
+                {
+}
+            ).addTo(map_44d92a6948255219fd743cd54fdfcb3e);
+        
+    
+            var div_icon_74459deed537cdbd2e5af16988949933 = L.divIcon({
+  &quot;html&quot;: &quot;\n        \u003cdiv style=\&quot;\n            background-color: #ffc107;\n            border: 2px solid white;\n            border-radius: 50%;\n            width: 32px;\n            height: 32px;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            font-weight: bold;\n            font-size: 14px;\n            color: black;\n            box-shadow: 0 2px 4px rgba(0,0,0,0.3);\n        \&quot;\u003e9\u003c/div\u003e\n        &quot;,
+  &quot;className&quot;: &quot;empty&quot;,
+});
+        
+    
+        var popup_bc741c2ae5e4eac83b9541136231376f = L.popup({
+  &quot;maxWidth&quot;: 300,
+});
+
+        
+            
+                var html_dcc3b9a3ed03090c346a8e2bc64498af = $(`&lt;div id=&quot;html_dcc3b9a3ed03090c346a8e2bc64498af&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;         &lt;div style=&quot;font-family: Arial; width: 250px;&quot;&gt;             &lt;h4 style=&quot;margin: 0 0 10px 0;&quot;&gt;Rank #9 - Score: 60.9/100&lt;/h4&gt;             &lt;p style=&quot;margin: 5px 0;&quot;&gt;&lt;b&gt;Listing ID:&lt;/b&gt; 915980469972640197&lt;/p&gt;         &lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Price:&lt;/b&gt; $158.00/night&lt;/p&gt;&lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Type:&lt;/b&gt; entire_home&lt;/p&gt;&lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Rating:&lt;/b&gt; ⭐ 5.0&lt;/p&gt;             &lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Occupancy:&lt;/b&gt; 90% / 100%&lt;/p&gt;             &lt;p style=&#x27;margin: 10px 0 0 0;&#x27;&gt;                 &lt;a href=&quot;https://www.airbnb.com/rooms/915980469972640197&quot; target=&quot;_blank&quot; style=&quot;color: #FF5A5F;&quot;&gt;                     View on Airbnb →                 &lt;/a&gt;             &lt;/p&gt;         &lt;/div&gt;         &lt;/div&gt;`)[0];
+                popup_bc741c2ae5e4eac83b9541136231376f.setContent(html_dcc3b9a3ed03090c346a8e2bc64498af);
+            
+        
+
+        marker_91fbc86ea3797ca5372c447c76e8ed73.bindPopup(popup_bc741c2ae5e4eac83b9541136231376f)
+        ;
+
+        
+    
+    
+                marker_91fbc86ea3797ca5372c447c76e8ed73.setIcon(div_icon_74459deed537cdbd2e5af16988949933);
+            
+    
+            var marker_94caf12b50cd74f105a978539ebee5af = L.marker(
+                [30.255, -97.732],
+                {
+}
+            ).addTo(map_44d92a6948255219fd743cd54fdfcb3e);
+        
+    
+            var div_icon_29a1dece9c0a5b190dd2824451f52074 = L.divIcon({
+  &quot;html&quot;: &quot;\n        \u003cdiv style=\&quot;\n            background-color: #ffc107;\n            border: 2px solid white;\n            border-radius: 50%;\n            width: 32px;\n            height: 32px;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            font-weight: bold;\n            font-size: 14px;\n            color: black;\n            box-shadow: 0 2px 4px rgba(0,0,0,0.3);\n        \&quot;\u003e10\u003c/div\u003e\n        &quot;,
+  &quot;className&quot;: &quot;empty&quot;,
+});
+        
+    
+        var popup_7a914782c5e12fcc0cf9761e92385a6e = L.popup({
+  &quot;maxWidth&quot;: 300,
+});
+
+        
+            
+                var html_11a4639af532dfee4a1ab7327f4634e7 = $(`&lt;div id=&quot;html_11a4639af532dfee4a1ab7327f4634e7&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;         &lt;div style=&quot;font-family: Arial; width: 250px;&quot;&gt;             &lt;h4 style=&quot;margin: 0 0 10px 0;&quot;&gt;Rank #10 - Score: 52.7/100&lt;/h4&gt;             &lt;p style=&quot;margin: 5px 0;&quot;&gt;&lt;b&gt;Listing ID:&lt;/b&gt; 1216254798158559027&lt;/p&gt;         &lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Price:&lt;/b&gt; $210.00/night&lt;/p&gt;&lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Type:&lt;/b&gt; entire_home&lt;/p&gt;&lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Rating:&lt;/b&gt; ⭐ 5.0&lt;/p&gt;             &lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Occupancy:&lt;/b&gt; 77% / 83%&lt;/p&gt;             &lt;p style=&#x27;margin: 10px 0 0 0;&#x27;&gt;                 &lt;a href=&quot;https://www.airbnb.com/rooms/1216254798158559027&quot; target=&quot;_blank&quot; style=&quot;color: #FF5A5F;&quot;&gt;                     View on Airbnb →                 &lt;/a&gt;             &lt;/p&gt;         &lt;/div&gt;         &lt;/div&gt;`)[0];
+                popup_7a914782c5e12fcc0cf9761e92385a6e.setContent(html_11a4639af532dfee4a1ab7327f4634e7);
+            
+        
+
+        marker_94caf12b50cd74f105a978539ebee5af.bindPopup(popup_7a914782c5e12fcc0cf9761e92385a6e)
+        ;
+
+        
+    
+    
+                marker_94caf12b50cd74f105a978539ebee5af.setIcon(div_icon_29a1dece9c0a5b190dd2824451f52074);
+            
+    
+            var marker_9d535df3ea3077bb672c3055435411c6 = L.marker(
+                [30.25736, -97.69904],
+                {
+}
+            ).addTo(map_44d92a6948255219fd743cd54fdfcb3e);
+        
+    
+            var div_icon_d41a93aa53659199725b5e95f045e1c0 = L.divIcon({
+  &quot;html&quot;: &quot;\n        \u003cdiv style=\&quot;\n            background-color: #ffc107;\n            border: 2px solid white;\n            border-radius: 50%;\n            width: 32px;\n            height: 32px;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            font-weight: bold;\n            font-size: 14px;\n            color: black;\n            box-shadow: 0 2px 4px rgba(0,0,0,0.3);\n        \&quot;\u003e11\u003c/div\u003e\n        &quot;,
+  &quot;className&quot;: &quot;empty&quot;,
+});
+        
+    
+        var popup_803bce598d691b0f404821d4a9576d8a = L.popup({
+  &quot;maxWidth&quot;: 300,
+});
+
+        
+            
+                var html_c280226ddcd10e6674d1d1975428451e = $(`&lt;div id=&quot;html_c280226ddcd10e6674d1d1975428451e&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;         &lt;div style=&quot;font-family: Arial; width: 250px;&quot;&gt;             &lt;h4 style=&quot;margin: 0 0 10px 0;&quot;&gt;Rank #11 - Score: 50.8/100&lt;/h4&gt;             &lt;p style=&quot;margin: 5px 0;&quot;&gt;&lt;b&gt;Listing ID:&lt;/b&gt; 45691473&lt;/p&gt;         &lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Price:&lt;/b&gt; $128.00/night&lt;/p&gt;&lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Type:&lt;/b&gt; entire_home&lt;/p&gt;&lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Rating:&lt;/b&gt; ⭐ 5.0&lt;/p&gt;             &lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Occupancy:&lt;/b&gt; 83% / 73%&lt;/p&gt;             &lt;p style=&#x27;margin: 10px 0 0 0;&#x27;&gt;                 &lt;a href=&quot;https://www.airbnb.com/rooms/45691473&quot; target=&quot;_blank&quot; style=&quot;color: #FF5A5F;&quot;&gt;                     View on Airbnb →                 &lt;/a&gt;             &lt;/p&gt;         &lt;/div&gt;         &lt;/div&gt;`)[0];
+                popup_803bce598d691b0f404821d4a9576d8a.setContent(html_c280226ddcd10e6674d1d1975428451e);
+            
+        
+
+        marker_9d535df3ea3077bb672c3055435411c6.bindPopup(popup_803bce598d691b0f404821d4a9576d8a)
+        ;
+
+        
+    
+    
+                marker_9d535df3ea3077bb672c3055435411c6.setIcon(div_icon_d41a93aa53659199725b5e95f045e1c0);
+            
+    
+            var marker_1fcc4d7aaead16119f0d54519082c744 = L.marker(
+                [30.32867664324778, -97.7042675583594],
+                {
+}
+            ).addTo(map_44d92a6948255219fd743cd54fdfcb3e);
+        
+    
+            var div_icon_ce4a1b89d686223c19031d8a9cf77cfe = L.divIcon({
+  &quot;html&quot;: &quot;\n        \u003cdiv style=\&quot;\n            background-color: #dc3545;\n            border: 2px solid white;\n            border-radius: 50%;\n            width: 32px;\n            height: 32px;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            font-weight: bold;\n            font-size: 14px;\n            color: white;\n            box-shadow: 0 2px 4px rgba(0,0,0,0.3);\n        \&quot;\u003e12\u003c/div\u003e\n        &quot;,
+  &quot;className&quot;: &quot;empty&quot;,
+});
+        
+    
+        var popup_df97b2b2ac0abfcff651fa19238a8a90 = L.popup({
+  &quot;maxWidth&quot;: 300,
+});
+
+        
+            
+                var html_835c3279c719c99b1b39a9dd1f8a7368 = $(`&lt;div id=&quot;html_835c3279c719c99b1b39a9dd1f8a7368&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;         &lt;div style=&quot;font-family: Arial; width: 250px;&quot;&gt;             &lt;h4 style=&quot;margin: 0 0 10px 0;&quot;&gt;Rank #12 - Score: 49.7/100&lt;/h4&gt;             &lt;p style=&quot;margin: 5px 0;&quot;&gt;&lt;b&gt;Listing ID:&lt;/b&gt; 1365215109406958065&lt;/p&gt;         &lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Price:&lt;/b&gt; $128.64/night&lt;/p&gt;&lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Type:&lt;/b&gt; entire_home&lt;/p&gt;&lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Rating:&lt;/b&gt; ⭐ 4.0&lt;/p&gt;             &lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Occupancy:&lt;/b&gt; 93% / 77%&lt;/p&gt;             &lt;p style=&#x27;margin: 10px 0 0 0;&#x27;&gt;                 &lt;a href=&quot;https://www.airbnb.com/rooms/1365215109406958065&quot; target=&quot;_blank&quot; style=&quot;color: #FF5A5F;&quot;&gt;                     View on Airbnb →                 &lt;/a&gt;             &lt;/p&gt;         &lt;/div&gt;         &lt;/div&gt;`)[0];
+                popup_df97b2b2ac0abfcff651fa19238a8a90.setContent(html_835c3279c719c99b1b39a9dd1f8a7368);
+            
+        
+
+        marker_1fcc4d7aaead16119f0d54519082c744.bindPopup(popup_df97b2b2ac0abfcff651fa19238a8a90)
+        ;
+
+        
+    
+    
+                marker_1fcc4d7aaead16119f0d54519082c744.setIcon(div_icon_ce4a1b89d686223c19031d8a9cf77cfe);
+            
+    
+            var marker_a9bb5b25d84945539597020314b1c187 = L.marker(
+                [30.319, -97.717],
+                {
+}
+            ).addTo(map_44d92a6948255219fd743cd54fdfcb3e);
+        
+    
+            var div_icon_c604d5e4e6a2aed79b22c08a4b7ea764 = L.divIcon({
+  &quot;html&quot;: &quot;\n        \u003cdiv style=\&quot;\n            background-color: #dc3545;\n            border: 2px solid white;\n            border-radius: 50%;\n            width: 32px;\n            height: 32px;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            font-weight: bold;\n            font-size: 14px;\n            color: white;\n            box-shadow: 0 2px 4px rgba(0,0,0,0.3);\n        \&quot;\u003e13\u003c/div\u003e\n        &quot;,
+  &quot;className&quot;: &quot;empty&quot;,
+});
+        
+    
+        var popup_733b7b0fa075b68d3bd3fda1e36ee6c1 = L.popup({
+  &quot;maxWidth&quot;: 300,
+});
+
+        
+            
+                var html_3c9940ed997eabc20c6aa71615179743 = $(`&lt;div id=&quot;html_3c9940ed997eabc20c6aa71615179743&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;         &lt;div style=&quot;font-family: Arial; width: 250px;&quot;&gt;             &lt;h4 style=&quot;margin: 0 0 10px 0;&quot;&gt;Rank #13 - Score: 45.5/100&lt;/h4&gt;             &lt;p style=&quot;margin: 5px 0;&quot;&gt;&lt;b&gt;Listing ID:&lt;/b&gt; 875980141915113844&lt;/p&gt;         &lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Price:&lt;/b&gt; $298.20/night&lt;/p&gt;&lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Type:&lt;/b&gt; entire_home&lt;/p&gt;&lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Rating:&lt;/b&gt; ⭐ 5.0&lt;/p&gt;             &lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Occupancy:&lt;/b&gt; 80% / 73%&lt;/p&gt;             &lt;p style=&#x27;margin: 10px 0 0 0;&#x27;&gt;                 &lt;a href=&quot;https://www.airbnb.com/rooms/875980141915113844&quot; target=&quot;_blank&quot; style=&quot;color: #FF5A5F;&quot;&gt;                     View on Airbnb →                 &lt;/a&gt;             &lt;/p&gt;         &lt;/div&gt;         &lt;/div&gt;`)[0];
+                popup_733b7b0fa075b68d3bd3fda1e36ee6c1.setContent(html_3c9940ed997eabc20c6aa71615179743);
+            
+        
+
+        marker_a9bb5b25d84945539597020314b1c187.bindPopup(popup_733b7b0fa075b68d3bd3fda1e36ee6c1)
+        ;
+
+        
+    
+    
+                marker_a9bb5b25d84945539597020314b1c187.setIcon(div_icon_c604d5e4e6a2aed79b22c08a4b7ea764);
+            
+    
+            var marker_96248aa8e03998a3b048d53a4b41c527 = L.marker(
+                [30.2422, -97.69371],
+                {
+}
+            ).addTo(map_44d92a6948255219fd743cd54fdfcb3e);
+        
+    
+            var div_icon_746c522cb26a21e0fafe7c5e6df368d0 = L.divIcon({
+  &quot;html&quot;: &quot;\n        \u003cdiv style=\&quot;\n            background-color: #dc3545;\n            border: 2px solid white;\n            border-radius: 50%;\n            width: 32px;\n            height: 32px;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            font-weight: bold;\n            font-size: 14px;\n            color: white;\n            box-shadow: 0 2px 4px rgba(0,0,0,0.3);\n        \&quot;\u003e14\u003c/div\u003e\n        &quot;,
+  &quot;className&quot;: &quot;empty&quot;,
+});
+        
+    
+        var popup_1fff0122daddf8e5ac79f6c8a21e9766 = L.popup({
+  &quot;maxWidth&quot;: 300,
+});
+
+        
+            
+                var html_e71f9e69c06aadd6b377eba9a88911bb = $(`&lt;div id=&quot;html_e71f9e69c06aadd6b377eba9a88911bb&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;         &lt;div style=&quot;font-family: Arial; width: 250px;&quot;&gt;             &lt;h4 style=&quot;margin: 0 0 10px 0;&quot;&gt;Rank #14 - Score: 39.3/100&lt;/h4&gt;             &lt;p style=&quot;margin: 5px 0;&quot;&gt;&lt;b&gt;Listing ID:&lt;/b&gt; 1249956810576205504&lt;/p&gt;         &lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Price:&lt;/b&gt; $361.00/night&lt;/p&gt;&lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Type:&lt;/b&gt; entire_home&lt;/p&gt;&lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Rating:&lt;/b&gt; ⭐ 5.0&lt;/p&gt;             &lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Occupancy:&lt;/b&gt; 77% / 57%&lt;/p&gt;             &lt;p style=&#x27;margin: 10px 0 0 0;&#x27;&gt;                 &lt;a href=&quot;https://www.airbnb.com/rooms/1249956810576205504&quot; target=&quot;_blank&quot; style=&quot;color: #FF5A5F;&quot;&gt;                     View on Airbnb →                 &lt;/a&gt;             &lt;/p&gt;         &lt;/div&gt;         &lt;/div&gt;`)[0];
+                popup_1fff0122daddf8e5ac79f6c8a21e9766.setContent(html_e71f9e69c06aadd6b377eba9a88911bb);
+            
+        
+
+        marker_96248aa8e03998a3b048d53a4b41c527.bindPopup(popup_1fff0122daddf8e5ac79f6c8a21e9766)
+        ;
+
+        
+    
+    
+                marker_96248aa8e03998a3b048d53a4b41c527.setIcon(div_icon_746c522cb26a21e0fafe7c5e6df368d0);
+            
+    
+            var marker_e1c4f561b732db30ab7dad300e3bc375 = L.marker(
+                [30.269554160491342, -97.73583210124556],
+                {
+}
+            ).addTo(map_44d92a6948255219fd743cd54fdfcb3e);
+        
+    
+            var div_icon_8cd3e5e0fcccbd6d4f06988bf23244de = L.divIcon({
+  &quot;html&quot;: &quot;\n        \u003cdiv style=\&quot;\n            background-color: #dc3545;\n            border: 2px solid white;\n            border-radius: 50%;\n            width: 32px;\n            height: 32px;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            font-weight: bold;\n            font-size: 14px;\n            color: white;\n            box-shadow: 0 2px 4px rgba(0,0,0,0.3);\n        \&quot;\u003e15\u003c/div\u003e\n        &quot;,
+  &quot;className&quot;: &quot;empty&quot;,
+});
+        
+    
+        var popup_d5b3ba0b74220bd7bbdb51b783364480 = L.popup({
+  &quot;maxWidth&quot;: 300,
+});
+
+        
+            
+                var html_b9c80a19f1e9f152f1e037cecb99614f = $(`&lt;div id=&quot;html_b9c80a19f1e9f152f1e037cecb99614f&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;         &lt;div style=&quot;font-family: Arial; width: 250px;&quot;&gt;             &lt;h4 style=&quot;margin: 0 0 10px 0;&quot;&gt;Rank #15 - Score: 36.2/100&lt;/h4&gt;             &lt;p style=&quot;margin: 5px 0;&quot;&gt;&lt;b&gt;Listing ID:&lt;/b&gt; 952982541156155649&lt;/p&gt;         &lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Type:&lt;/b&gt; private_room&lt;/p&gt;&lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Rating:&lt;/b&gt; ⭐ 5.0&lt;/p&gt;             &lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Occupancy:&lt;/b&gt; 103% / 100%&lt;/p&gt;             &lt;p style=&#x27;margin: 10px 0 0 0;&#x27;&gt;                 &lt;a href=&quot;https://www.airbnb.com/rooms/952982541156155649&quot; target=&quot;_blank&quot; style=&quot;color: #FF5A5F;&quot;&gt;                     View on Airbnb →                 &lt;/a&gt;             &lt;/p&gt;         &lt;/div&gt;         &lt;/div&gt;`)[0];
+                popup_d5b3ba0b74220bd7bbdb51b783364480.setContent(html_b9c80a19f1e9f152f1e037cecb99614f);
+            
+        
+
+        marker_e1c4f561b732db30ab7dad300e3bc375.bindPopup(popup_d5b3ba0b74220bd7bbdb51b783364480)
+        ;
+
+        
+    
+    
+                marker_e1c4f561b732db30ab7dad300e3bc375.setIcon(div_icon_8cd3e5e0fcccbd6d4f06988bf23244de);
+            
+    
+            var marker_5081de48fa2a28f8b86a8d2aa4f5ddb6 = L.marker(
+                [30.285, -97.719],
+                {
+}
+            ).addTo(map_44d92a6948255219fd743cd54fdfcb3e);
+        
+    
+            var div_icon_1bc6af3b3784cc040954e7a6f189ae17 = L.divIcon({
+  &quot;html&quot;: &quot;\n        \u003cdiv style=\&quot;\n            background-color: #dc3545;\n            border: 2px solid white;\n            border-radius: 50%;\n            width: 32px;\n            height: 32px;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            font-weight: bold;\n            font-size: 14px;\n            color: white;\n            box-shadow: 0 2px 4px rgba(0,0,0,0.3);\n        \&quot;\u003e16\u003c/div\u003e\n        &quot;,
+  &quot;className&quot;: &quot;empty&quot;,
+});
+        
+    
+        var popup_dc88e3909209d14c91a51c89155800bf = L.popup({
+  &quot;maxWidth&quot;: 300,
+});
+
+        
+            
+                var html_b4dbec0b1d903cf7fea9b751014a3e16 = $(`&lt;div id=&quot;html_b4dbec0b1d903cf7fea9b751014a3e16&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;         &lt;div style=&quot;font-family: Arial; width: 250px;&quot;&gt;             &lt;h4 style=&quot;margin: 0 0 10px 0;&quot;&gt;Rank #16 - Score: 36.1/100&lt;/h4&gt;             &lt;p style=&quot;margin: 5px 0;&quot;&gt;&lt;b&gt;Listing ID:&lt;/b&gt; 1193622183756880194&lt;/p&gt;         &lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Price:&lt;/b&gt; $216.06/night&lt;/p&gt;&lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Type:&lt;/b&gt; entire_home&lt;/p&gt;&lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Rating:&lt;/b&gt; ⭐ 5.0&lt;/p&gt;             &lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Occupancy:&lt;/b&gt; 77% / 63%&lt;/p&gt;             &lt;p style=&#x27;margin: 10px 0 0 0;&#x27;&gt;                 &lt;a href=&quot;https://www.airbnb.com/rooms/1193622183756880194&quot; target=&quot;_blank&quot; style=&quot;color: #FF5A5F;&quot;&gt;                     View on Airbnb →                 &lt;/a&gt;             &lt;/p&gt;         &lt;/div&gt;         &lt;/div&gt;`)[0];
+                popup_dc88e3909209d14c91a51c89155800bf.setContent(html_b4dbec0b1d903cf7fea9b751014a3e16);
+            
+        
+
+        marker_5081de48fa2a28f8b86a8d2aa4f5ddb6.bindPopup(popup_dc88e3909209d14c91a51c89155800bf)
+        ;
+
+        
+    
+    
+                marker_5081de48fa2a28f8b86a8d2aa4f5ddb6.setIcon(div_icon_1bc6af3b3784cc040954e7a6f189ae17);
+            
+    
+            var marker_89eb826c534d6fc9775da3ea73f03059 = L.marker(
+                [30.2787, -97.69541],
+                {
+}
+            ).addTo(map_44d92a6948255219fd743cd54fdfcb3e);
+        
+    
+            var div_icon_bcdfca543981e81c3c45d2f5377ee578 = L.divIcon({
+  &quot;html&quot;: &quot;\n        \u003cdiv style=\&quot;\n            background-color: #dc3545;\n            border: 2px solid white;\n            border-radius: 50%;\n            width: 32px;\n            height: 32px;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            font-weight: bold;\n            font-size: 14px;\n            color: white;\n            box-shadow: 0 2px 4px rgba(0,0,0,0.3);\n        \&quot;\u003e17\u003c/div\u003e\n        &quot;,
+  &quot;className&quot;: &quot;empty&quot;,
+});
+        
+    
+        var popup_eec87892a9492c59bd0c502a20572d70 = L.popup({
+  &quot;maxWidth&quot;: 300,
+});
+
+        
+            
+                var html_e0babc213e75aab100612bbb6b1f05d4 = $(`&lt;div id=&quot;html_e0babc213e75aab100612bbb6b1f05d4&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;         &lt;div style=&quot;font-family: Arial; width: 250px;&quot;&gt;             &lt;h4 style=&quot;margin: 0 0 10px 0;&quot;&gt;Rank #17 - Score: 35.5/100&lt;/h4&gt;             &lt;p style=&quot;margin: 5px 0;&quot;&gt;&lt;b&gt;Listing ID:&lt;/b&gt; 52288828&lt;/p&gt;         &lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Price:&lt;/b&gt; $162.94/night&lt;/p&gt;&lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Type:&lt;/b&gt; entire_home&lt;/p&gt;&lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Rating:&lt;/b&gt; ⭐ 5.0&lt;/p&gt;             &lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Occupancy:&lt;/b&gt; 80% / 57%&lt;/p&gt;             &lt;p style=&#x27;margin: 10px 0 0 0;&#x27;&gt;                 &lt;a href=&quot;https://www.airbnb.com/rooms/52288828&quot; target=&quot;_blank&quot; style=&quot;color: #FF5A5F;&quot;&gt;                     View on Airbnb →                 &lt;/a&gt;             &lt;/p&gt;         &lt;/div&gt;         &lt;/div&gt;`)[0];
+                popup_eec87892a9492c59bd0c502a20572d70.setContent(html_e0babc213e75aab100612bbb6b1f05d4);
+            
+        
+
+        marker_89eb826c534d6fc9775da3ea73f03059.bindPopup(popup_eec87892a9492c59bd0c502a20572d70)
+        ;
+
+        
+    
+    
+                marker_89eb826c534d6fc9775da3ea73f03059.setIcon(div_icon_bcdfca543981e81c3c45d2f5377ee578);
+            
+    
+            var marker_98e835880f178805dfdfa776ca5046e1 = L.marker(
+                [30.23139, -97.76957],
+                {
+}
+            ).addTo(map_44d92a6948255219fd743cd54fdfcb3e);
+        
+    
+            var div_icon_0558256d243f63936e98d3ce0b2b831d = L.divIcon({
+  &quot;html&quot;: &quot;\n        \u003cdiv style=\&quot;\n            background-color: #dc3545;\n            border: 2px solid white;\n            border-radius: 50%;\n            width: 32px;\n            height: 32px;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            font-weight: bold;\n            font-size: 14px;\n            color: white;\n            box-shadow: 0 2px 4px rgba(0,0,0,0.3);\n        \&quot;\u003e18\u003c/div\u003e\n        &quot;,
+  &quot;className&quot;: &quot;empty&quot;,
+});
+        
+    
+        var popup_48f8b069d2f7e46d23bf4ad0bac8bc8b = L.popup({
+  &quot;maxWidth&quot;: 300,
+});
+
+        
+            
+                var html_9de7508f3a0ba75fb103d03455efea6f = $(`&lt;div id=&quot;html_9de7508f3a0ba75fb103d03455efea6f&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;         &lt;div style=&quot;font-family: Arial; width: 250px;&quot;&gt;             &lt;h4 style=&quot;margin: 0 0 10px 0;&quot;&gt;Rank #18 - Score: 33.8/100&lt;/h4&gt;             &lt;p style=&quot;margin: 5px 0;&quot;&gt;&lt;b&gt;Listing ID:&lt;/b&gt; 1415897966965396806&lt;/p&gt;         &lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Price:&lt;/b&gt; $134.49/night&lt;/p&gt;&lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Type:&lt;/b&gt; private_room&lt;/p&gt;&lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Rating:&lt;/b&gt; ⭐ 5.0&lt;/p&gt;             &lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Occupancy:&lt;/b&gt; 77% / 60%&lt;/p&gt;             &lt;p style=&#x27;margin: 10px 0 0 0;&#x27;&gt;                 &lt;a href=&quot;https://www.airbnb.com/rooms/1415897966965396806&quot; target=&quot;_blank&quot; style=&quot;color: #FF5A5F;&quot;&gt;                     View on Airbnb →                 &lt;/a&gt;             &lt;/p&gt;         &lt;/div&gt;         &lt;/div&gt;`)[0];
+                popup_48f8b069d2f7e46d23bf4ad0bac8bc8b.setContent(html_9de7508f3a0ba75fb103d03455efea6f);
+            
+        
+
+        marker_98e835880f178805dfdfa776ca5046e1.bindPopup(popup_48f8b069d2f7e46d23bf4ad0bac8bc8b)
+        ;
+
+        
+    
+    
+                marker_98e835880f178805dfdfa776ca5046e1.setIcon(div_icon_0558256d243f63936e98d3ce0b2b831d);
+            
+    
+            var marker_2f0c81f9c8b81dcf4aa887391b101061 = L.marker(
+                [30.27001825398996, -97.73482666195076],
+                {
+}
+            ).addTo(map_44d92a6948255219fd743cd54fdfcb3e);
+        
+    
+            var div_icon_b8029f9e4d870e10d54368e73ce25ef6 = L.divIcon({
+  &quot;html&quot;: &quot;\n        \u003cdiv style=\&quot;\n            background-color: #dc3545;\n            border: 2px solid white;\n            border-radius: 50%;\n            width: 32px;\n            height: 32px;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            font-weight: bold;\n            font-size: 14px;\n            color: white;\n            box-shadow: 0 2px 4px rgba(0,0,0,0.3);\n        \&quot;\u003e19\u003c/div\u003e\n        &quot;,
+  &quot;className&quot;: &quot;empty&quot;,
+});
+        
+    
+        var popup_e130cd2afb761c32b91519aa6a3c0330 = L.popup({
+  &quot;maxWidth&quot;: 300,
+});
+
+        
+            
+                var html_4ec5d7e9497f6a26540a90d0ed7109d7 = $(`&lt;div id=&quot;html_4ec5d7e9497f6a26540a90d0ed7109d7&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;         &lt;div style=&quot;font-family: Arial; width: 250px;&quot;&gt;             &lt;h4 style=&quot;margin: 0 0 10px 0;&quot;&gt;Rank #19 - Score: 33.4/100&lt;/h4&gt;             &lt;p style=&quot;margin: 5px 0;&quot;&gt;&lt;b&gt;Listing ID:&lt;/b&gt; 1178913284239086357&lt;/p&gt;         &lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Type:&lt;/b&gt; private_room&lt;/p&gt;&lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Rating:&lt;/b&gt; ⭐ 4.0&lt;/p&gt;             &lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Occupancy:&lt;/b&gt; 103% / 100%&lt;/p&gt;             &lt;p style=&#x27;margin: 10px 0 0 0;&#x27;&gt;                 &lt;a href=&quot;https://www.airbnb.com/rooms/1178913284239086357&quot; target=&quot;_blank&quot; style=&quot;color: #FF5A5F;&quot;&gt;                     View on Airbnb →                 &lt;/a&gt;             &lt;/p&gt;         &lt;/div&gt;         &lt;/div&gt;`)[0];
+                popup_e130cd2afb761c32b91519aa6a3c0330.setContent(html_4ec5d7e9497f6a26540a90d0ed7109d7);
+            
+        
+
+        marker_2f0c81f9c8b81dcf4aa887391b101061.bindPopup(popup_e130cd2afb761c32b91519aa6a3c0330)
+        ;
+
+        
+    
+    
+                marker_2f0c81f9c8b81dcf4aa887391b101061.setIcon(div_icon_b8029f9e4d870e10d54368e73ce25ef6);
+            
+    
+            var marker_06fd517b81d9c80bc655d767111d062f = L.marker(
+                [30.26961211455825, -97.73322405985334],
+                {
+}
+            ).addTo(map_44d92a6948255219fd743cd54fdfcb3e);
+        
+    
+            var div_icon_dfedccca00959d9c60b1153381dc61c5 = L.divIcon({
+  &quot;html&quot;: &quot;\n        \u003cdiv style=\&quot;\n            background-color: #dc3545;\n            border: 2px solid white;\n            border-radius: 50%;\n            width: 32px;\n            height: 32px;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            font-weight: bold;\n            font-size: 14px;\n            color: white;\n            box-shadow: 0 2px 4px rgba(0,0,0,0.3);\n        \&quot;\u003e20\u003c/div\u003e\n        &quot;,
+  &quot;className&quot;: &quot;empty&quot;,
+});
+        
+    
+        var popup_5334ede32ec633bc900627be9ee3c63d = L.popup({
+  &quot;maxWidth&quot;: 300,
+});
+
+        
+            
+                var html_fddf4119910a9bf0229acc88efd3b118 = $(`&lt;div id=&quot;html_fddf4119910a9bf0229acc88efd3b118&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;         &lt;div style=&quot;font-family: Arial; width: 250px;&quot;&gt;             &lt;h4 style=&quot;margin: 0 0 10px 0;&quot;&gt;Rank #20 - Score: 33.3/100&lt;/h4&gt;             &lt;p style=&quot;margin: 5px 0;&quot;&gt;&lt;b&gt;Listing ID:&lt;/b&gt; 1178894943989968280&lt;/p&gt;         &lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Type:&lt;/b&gt; private_room&lt;/p&gt;&lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Rating:&lt;/b&gt; ⭐ 4.0&lt;/p&gt;             &lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Occupancy:&lt;/b&gt; 103% / 100%&lt;/p&gt;             &lt;p style=&#x27;margin: 10px 0 0 0;&#x27;&gt;                 &lt;a href=&quot;https://www.airbnb.com/rooms/1178894943989968280&quot; target=&quot;_blank&quot; style=&quot;color: #FF5A5F;&quot;&gt;                     View on Airbnb →                 &lt;/a&gt;             &lt;/p&gt;         &lt;/div&gt;         &lt;/div&gt;`)[0];
+                popup_5334ede32ec633bc900627be9ee3c63d.setContent(html_fddf4119910a9bf0229acc88efd3b118);
+            
+        
+
+        marker_06fd517b81d9c80bc655d767111d062f.bindPopup(popup_5334ede32ec633bc900627be9ee3c63d)
+        ;
+
+        
+    
+    
+                marker_06fd517b81d9c80bc655d767111d062f.setIcon(div_icon_dfedccca00959d9c60b1153381dc61c5);
+            
+    
+            var marker_371ae97733972d3b2a48bf3de088bfc5 = L.marker(
+                [30.2689, -97.73583],
+                {
+}
+            ).addTo(map_44d92a6948255219fd743cd54fdfcb3e);
+        
+    
+            var div_icon_4ae2c11526fbcc50c10e1be75f97c5b8 = L.divIcon({
+  &quot;html&quot;: &quot;\n        \u003cdiv style=\&quot;\n            background-color: #dc3545;\n            border: 2px solid white;\n            border-radius: 50%;\n            width: 32px;\n            height: 32px;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            font-weight: bold;\n            font-size: 14px;\n            color: white;\n            box-shadow: 0 2px 4px rgba(0,0,0,0.3);\n        \&quot;\u003e21\u003c/div\u003e\n        &quot;,
+  &quot;className&quot;: &quot;empty&quot;,
+});
+        
+    
+        var popup_239af32a8b66918ac8a84e6c4c3ec470 = L.popup({
+  &quot;maxWidth&quot;: 300,
+});
+
+        
+            
+                var html_d5c5da6819e4e41689af60209451381f = $(`&lt;div id=&quot;html_d5c5da6819e4e41689af60209451381f&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;         &lt;div style=&quot;font-family: Arial; width: 250px;&quot;&gt;             &lt;h4 style=&quot;margin: 0 0 10px 0;&quot;&gt;Rank #21 - Score: 33.3/100&lt;/h4&gt;             &lt;p style=&quot;margin: 5px 0;&quot;&gt;&lt;b&gt;Listing ID:&lt;/b&gt; 1460198956208155597&lt;/p&gt;         &lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Type:&lt;/b&gt; private_room&lt;/p&gt;             &lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Occupancy:&lt;/b&gt; 103% / 100%&lt;/p&gt;             &lt;p style=&#x27;margin: 10px 0 0 0;&#x27;&gt;                 &lt;a href=&quot;https://www.airbnb.com/rooms/1460198956208155597&quot; target=&quot;_blank&quot; style=&quot;color: #FF5A5F;&quot;&gt;                     View on Airbnb →                 &lt;/a&gt;             &lt;/p&gt;         &lt;/div&gt;         &lt;/div&gt;`)[0];
+                popup_239af32a8b66918ac8a84e6c4c3ec470.setContent(html_d5c5da6819e4e41689af60209451381f);
+            
+        
+
+        marker_371ae97733972d3b2a48bf3de088bfc5.bindPopup(popup_239af32a8b66918ac8a84e6c4c3ec470)
+        ;
+
+        
+    
+    
+                marker_371ae97733972d3b2a48bf3de088bfc5.setIcon(div_icon_4ae2c11526fbcc50c10e1be75f97c5b8);
+            
+    
+            var marker_751fbbf74a500ed803c146567e745f33 = L.marker(
+                [30.271008016200497, -97.73679661171764],
+                {
+}
+            ).addTo(map_44d92a6948255219fd743cd54fdfcb3e);
+        
+    
+            var div_icon_9e5f87f0916a81f60e12ac82841afef0 = L.divIcon({
+  &quot;html&quot;: &quot;\n        \u003cdiv style=\&quot;\n            background-color: #dc3545;\n            border: 2px solid white;\n            border-radius: 50%;\n            width: 32px;\n            height: 32px;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            font-weight: bold;\n            font-size: 14px;\n            color: white;\n            box-shadow: 0 2px 4px rgba(0,0,0,0.3);\n        \&quot;\u003e22\u003c/div\u003e\n        &quot;,
+  &quot;className&quot;: &quot;empty&quot;,
+});
+        
+    
+        var popup_8250b980748c7ee11b3a41074d85f616 = L.popup({
+  &quot;maxWidth&quot;: 300,
+});
+
+        
+            
+                var html_9e41f12ca045c881070b448eb597301a = $(`&lt;div id=&quot;html_9e41f12ca045c881070b448eb597301a&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;         &lt;div style=&quot;font-family: Arial; width: 250px;&quot;&gt;             &lt;h4 style=&quot;margin: 0 0 10px 0;&quot;&gt;Rank #22 - Score: 33.2/100&lt;/h4&gt;             &lt;p style=&quot;margin: 5px 0;&quot;&gt;&lt;b&gt;Listing ID:&lt;/b&gt; 1435755743772384999&lt;/p&gt;         &lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Type:&lt;/b&gt; private_room&lt;/p&gt;             &lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Occupancy:&lt;/b&gt; 103% / 100%&lt;/p&gt;             &lt;p style=&#x27;margin: 10px 0 0 0;&#x27;&gt;                 &lt;a href=&quot;https://www.airbnb.com/rooms/1435755743772384999&quot; target=&quot;_blank&quot; style=&quot;color: #FF5A5F;&quot;&gt;                     View on Airbnb →                 &lt;/a&gt;             &lt;/p&gt;         &lt;/div&gt;         &lt;/div&gt;`)[0];
+                popup_8250b980748c7ee11b3a41074d85f616.setContent(html_9e41f12ca045c881070b448eb597301a);
+            
+        
+
+        marker_751fbbf74a500ed803c146567e745f33.bindPopup(popup_8250b980748c7ee11b3a41074d85f616)
+        ;
+
+        
+    
+    
+                marker_751fbbf74a500ed803c146567e745f33.setIcon(div_icon_9e5f87f0916a81f60e12ac82841afef0);
+            
+    
+            var marker_32ff1b43f254d5471d8cdb9e9fdeea11 = L.marker(
+                [30.272, -97.747],
+                {
+}
+            ).addTo(map_44d92a6948255219fd743cd54fdfcb3e);
+        
+    
+            var div_icon_88830030140fb7a07f03c72146e3838b = L.divIcon({
+  &quot;html&quot;: &quot;\n        \u003cdiv style=\&quot;\n            background-color: #dc3545;\n            border: 2px solid white;\n            border-radius: 50%;\n            width: 32px;\n            height: 32px;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            font-weight: bold;\n            font-size: 14px;\n            color: white;\n            box-shadow: 0 2px 4px rgba(0,0,0,0.3);\n        \&quot;\u003e23\u003c/div\u003e\n        &quot;,
+  &quot;className&quot;: &quot;empty&quot;,
+});
+        
+    
+        var popup_c4db27352db7b58a4b9e11234f917c88 = L.popup({
+  &quot;maxWidth&quot;: 300,
+});
+
+        
+            
+                var html_be747a695b69314cc846f23c3747ce1b = $(`&lt;div id=&quot;html_be747a695b69314cc846f23c3747ce1b&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;         &lt;div style=&quot;font-family: Arial; width: 250px;&quot;&gt;             &lt;h4 style=&quot;margin: 0 0 10px 0;&quot;&gt;Rank #23 - Score: 31.0/100&lt;/h4&gt;             &lt;p style=&quot;margin: 5px 0;&quot;&gt;&lt;b&gt;Listing ID:&lt;/b&gt; 25454542&lt;/p&gt;         &lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Price:&lt;/b&gt; $394.10/night&lt;/p&gt;&lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Type:&lt;/b&gt; entire_home&lt;/p&gt;&lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Rating:&lt;/b&gt; ⭐ 4.5&lt;/p&gt;             &lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Occupancy:&lt;/b&gt; 100% / 97%&lt;/p&gt;             &lt;p style=&#x27;margin: 10px 0 0 0;&#x27;&gt;                 &lt;a href=&quot;https://www.airbnb.com/rooms/25454542&quot; target=&quot;_blank&quot; style=&quot;color: #FF5A5F;&quot;&gt;                     View on Airbnb →                 &lt;/a&gt;             &lt;/p&gt;         &lt;/div&gt;         &lt;/div&gt;`)[0];
+                popup_c4db27352db7b58a4b9e11234f917c88.setContent(html_be747a695b69314cc846f23c3747ce1b);
+            
+        
+
+        marker_32ff1b43f254d5471d8cdb9e9fdeea11.bindPopup(popup_c4db27352db7b58a4b9e11234f917c88)
+        ;
+
+        
+    
+    
+                marker_32ff1b43f254d5471d8cdb9e9fdeea11.setIcon(div_icon_88830030140fb7a07f03c72146e3838b);
+            
+    
+            var marker_4c82c81259cc6bb999920f97b28f0855 = L.marker(
+                [30.26994, -97.74311],
+                {
+}
+            ).addTo(map_44d92a6948255219fd743cd54fdfcb3e);
+        
+    
+            var div_icon_d6ab04c2260e8b4f969352a826e8d8bd = L.divIcon({
+  &quot;html&quot;: &quot;\n        \u003cdiv style=\&quot;\n            background-color: #dc3545;\n            border: 2px solid white;\n            border-radius: 50%;\n            width: 32px;\n            height: 32px;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            font-weight: bold;\n            font-size: 14px;\n            color: white;\n            box-shadow: 0 2px 4px rgba(0,0,0,0.3);\n        \&quot;\u003e24\u003c/div\u003e\n        &quot;,
+  &quot;className&quot;: &quot;empty&quot;,
+});
+        
+    
+        var popup_9f0237205f88754ba1f7410095e352e1 = L.popup({
+  &quot;maxWidth&quot;: 300,
+});
+
+        
+            
+                var html_bf117cc5124134da071aa1abbbf8d087 = $(`&lt;div id=&quot;html_bf117cc5124134da071aa1abbbf8d087&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;         &lt;div style=&quot;font-family: Arial; width: 250px;&quot;&gt;             &lt;h4 style=&quot;margin: 0 0 10px 0;&quot;&gt;Rank #24 - Score: 31.0/100&lt;/h4&gt;             &lt;p style=&quot;margin: 5px 0;&quot;&gt;&lt;b&gt;Listing ID:&lt;/b&gt; 988981411608995254&lt;/p&gt;         &lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Price:&lt;/b&gt; $394.10/night&lt;/p&gt;&lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Type:&lt;/b&gt; entire_home&lt;/p&gt;             &lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Occupancy:&lt;/b&gt; 100% / 97%&lt;/p&gt;             &lt;p style=&#x27;margin: 10px 0 0 0;&#x27;&gt;                 &lt;a href=&quot;https://www.airbnb.com/rooms/988981411608995254&quot; target=&quot;_blank&quot; style=&quot;color: #FF5A5F;&quot;&gt;                     View on Airbnb →                 &lt;/a&gt;             &lt;/p&gt;         &lt;/div&gt;         &lt;/div&gt;`)[0];
+                popup_9f0237205f88754ba1f7410095e352e1.setContent(html_bf117cc5124134da071aa1abbbf8d087);
+            
+        
+
+        marker_4c82c81259cc6bb999920f97b28f0855.bindPopup(popup_9f0237205f88754ba1f7410095e352e1)
+        ;
+
+        
+    
+    
+                marker_4c82c81259cc6bb999920f97b28f0855.setIcon(div_icon_d6ab04c2260e8b4f969352a826e8d8bd);
+            
+    
+            var marker_f652d0712fedcdcc93fb105b428a9bd8 = L.marker(
+                [30.26851, -97.74111],
+                {
+}
+            ).addTo(map_44d92a6948255219fd743cd54fdfcb3e);
+        
+    
+            var div_icon_92e8820be8a2834bdd5f8f3047592e7f = L.divIcon({
+  &quot;html&quot;: &quot;\n        \u003cdiv style=\&quot;\n            background-color: #dc3545;\n            border: 2px solid white;\n            border-radius: 50%;\n            width: 32px;\n            height: 32px;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            font-weight: bold;\n            font-size: 14px;\n            color: white;\n            box-shadow: 0 2px 4px rgba(0,0,0,0.3);\n        \&quot;\u003e25\u003c/div\u003e\n        &quot;,
+  &quot;className&quot;: &quot;empty&quot;,
+});
+        
+    
+        var popup_e6ce5049e918cbab851d9a356824df68 = L.popup({
+  &quot;maxWidth&quot;: 300,
+});
+
+        
+            
+                var html_68cff11bab9ff4a037070f3b9a1f0850 = $(`&lt;div id=&quot;html_68cff11bab9ff4a037070f3b9a1f0850&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;         &lt;div style=&quot;font-family: Arial; width: 250px;&quot;&gt;             &lt;h4 style=&quot;margin: 0 0 10px 0;&quot;&gt;Rank #25 - Score: 31.0/100&lt;/h4&gt;             &lt;p style=&quot;margin: 5px 0;&quot;&gt;&lt;b&gt;Listing ID:&lt;/b&gt; 988980990644717791&lt;/p&gt;         &lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Price:&lt;/b&gt; $394.10/night&lt;/p&gt;&lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Type:&lt;/b&gt; entire_home&lt;/p&gt;             &lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Occupancy:&lt;/b&gt; 100% / 97%&lt;/p&gt;             &lt;p style=&#x27;margin: 10px 0 0 0;&#x27;&gt;                 &lt;a href=&quot;https://www.airbnb.com/rooms/988980990644717791&quot; target=&quot;_blank&quot; style=&quot;color: #FF5A5F;&quot;&gt;                     View on Airbnb →                 &lt;/a&gt;             &lt;/p&gt;         &lt;/div&gt;         &lt;/div&gt;`)[0];
+                popup_e6ce5049e918cbab851d9a356824df68.setContent(html_68cff11bab9ff4a037070f3b9a1f0850);
+            
+        
+
+        marker_f652d0712fedcdcc93fb105b428a9bd8.bindPopup(popup_e6ce5049e918cbab851d9a356824df68)
+        ;
+
+        
+    
+    
+                marker_f652d0712fedcdcc93fb105b428a9bd8.setIcon(div_icon_92e8820be8a2834bdd5f8f3047592e7f);
+            
+    
+            var marker_12b854b61f6bdb8274d014450dd07f0d = L.marker(
+                [30.288, -97.767],
+                {
+}
+            ).addTo(map_44d92a6948255219fd743cd54fdfcb3e);
+        
+    
+            var div_icon_a3d8b6fab4a96d8e064ab9f810781ce6 = L.divIcon({
+  &quot;html&quot;: &quot;\n        \u003cdiv style=\&quot;\n            background-color: #dc3545;\n            border: 2px solid white;\n            border-radius: 50%;\n            width: 32px;\n            height: 32px;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            font-weight: bold;\n            font-size: 14px;\n            color: white;\n            box-shadow: 0 2px 4px rgba(0,0,0,0.3);\n        \&quot;\u003e26\u003c/div\u003e\n        &quot;,
+  &quot;className&quot;: &quot;empty&quot;,
+});
+        
+    
+        var popup_ebfb3fbcc7de61d05b57ba0cbcc9b6de = L.popup({
+  &quot;maxWidth&quot;: 300,
+});
+
+        
+            
+                var html_50c3820552c4b4e0aaaa91bf60239ffe = $(`&lt;div id=&quot;html_50c3820552c4b4e0aaaa91bf60239ffe&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;         &lt;div style=&quot;font-family: Arial; width: 250px;&quot;&gt;             &lt;h4 style=&quot;margin: 0 0 10px 0;&quot;&gt;Rank #26 - Score: 27.1/100&lt;/h4&gt;             &lt;p style=&quot;margin: 5px 0;&quot;&gt;&lt;b&gt;Listing ID:&lt;/b&gt; 867285036056943855&lt;/p&gt;         &lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Price:&lt;/b&gt; $266.00/night&lt;/p&gt;&lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Type:&lt;/b&gt; private_room&lt;/p&gt;&lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Rating:&lt;/b&gt; ⭐ 5.0&lt;/p&gt;             &lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Occupancy:&lt;/b&gt; 87% / 100%&lt;/p&gt;             &lt;p style=&#x27;margin: 10px 0 0 0;&#x27;&gt;                 &lt;a href=&quot;https://www.airbnb.com/rooms/867285036056943855&quot; target=&quot;_blank&quot; style=&quot;color: #FF5A5F;&quot;&gt;                     View on Airbnb →                 &lt;/a&gt;             &lt;/p&gt;         &lt;/div&gt;         &lt;/div&gt;`)[0];
+                popup_ebfb3fbcc7de61d05b57ba0cbcc9b6de.setContent(html_50c3820552c4b4e0aaaa91bf60239ffe);
+            
+        
+
+        marker_12b854b61f6bdb8274d014450dd07f0d.bindPopup(popup_ebfb3fbcc7de61d05b57ba0cbcc9b6de)
+        ;
+
+        
+    
+    
+                marker_12b854b61f6bdb8274d014450dd07f0d.setIcon(div_icon_a3d8b6fab4a96d8e064ab9f810781ce6);
+            
+    
+            var marker_e8450cde4f715055084c1195001898d5 = L.marker(
+                [30.229087001292253, -97.79346541636028],
+                {
+}
+            ).addTo(map_44d92a6948255219fd743cd54fdfcb3e);
+        
+    
+            var div_icon_13ad226c9938a6da2cf142413d7f4b4c = L.divIcon({
+  &quot;html&quot;: &quot;\n        \u003cdiv style=\&quot;\n            background-color: #dc3545;\n            border: 2px solid white;\n            border-radius: 50%;\n            width: 32px;\n            height: 32px;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            font-weight: bold;\n            font-size: 14px;\n            color: white;\n            box-shadow: 0 2px 4px rgba(0,0,0,0.3);\n        \&quot;\u003e27\u003c/div\u003e\n        &quot;,
+  &quot;className&quot;: &quot;empty&quot;,
+});
+        
+    
+        var popup_35caf01ccfe4e499c0ffe536e5578398 = L.popup({
+  &quot;maxWidth&quot;: 300,
+});
+
+        
+            
+                var html_72d110fff89ad73a0be544b283031a2f = $(`&lt;div id=&quot;html_72d110fff89ad73a0be544b283031a2f&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;         &lt;div style=&quot;font-family: Arial; width: 250px;&quot;&gt;             &lt;h4 style=&quot;margin: 0 0 10px 0;&quot;&gt;Rank #27 - Score: 22.3/100&lt;/h4&gt;             &lt;p style=&quot;margin: 5px 0;&quot;&gt;&lt;b&gt;Listing ID:&lt;/b&gt; 1369203126386677566&lt;/p&gt;         &lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Price:&lt;/b&gt; $181.26/night&lt;/p&gt;&lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Type:&lt;/b&gt; entire_home&lt;/p&gt;&lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Rating:&lt;/b&gt; ⭐ 4.5&lt;/p&gt;             &lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Occupancy:&lt;/b&gt; 77% / 90%&lt;/p&gt;             &lt;p style=&#x27;margin: 10px 0 0 0;&#x27;&gt;                 &lt;a href=&quot;https://www.airbnb.com/rooms/1369203126386677566&quot; target=&quot;_blank&quot; style=&quot;color: #FF5A5F;&quot;&gt;                     View on Airbnb →                 &lt;/a&gt;             &lt;/p&gt;         &lt;/div&gt;         &lt;/div&gt;`)[0];
+                popup_35caf01ccfe4e499c0ffe536e5578398.setContent(html_72d110fff89ad73a0be544b283031a2f);
+            
+        
+
+        marker_e8450cde4f715055084c1195001898d5.bindPopup(popup_35caf01ccfe4e499c0ffe536e5578398)
+        ;
+
+        
+    
+    
+                marker_e8450cde4f715055084c1195001898d5.setIcon(div_icon_13ad226c9938a6da2cf142413d7f4b4c);
+            
+    
+            var marker_59e878393d0d073cb9965e3299090faa = L.marker(
+                [30.2706, -97.722],
+                {
+}
+            ).addTo(map_44d92a6948255219fd743cd54fdfcb3e);
+        
+    
+            var div_icon_24dc956e69ecf05db6c03eb60cfd74f1 = L.divIcon({
+  &quot;html&quot;: &quot;\n        \u003cdiv style=\&quot;\n            background-color: #dc3545;\n            border: 2px solid white;\n            border-radius: 50%;\n            width: 32px;\n            height: 32px;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            font-weight: bold;\n            font-size: 14px;\n            color: white;\n            box-shadow: 0 2px 4px rgba(0,0,0,0.3);\n        \&quot;\u003e28\u003c/div\u003e\n        &quot;,
+  &quot;className&quot;: &quot;empty&quot;,
+});
+        
+    
+        var popup_58156885abe60ef316bb749ea04ea9a5 = L.popup({
+  &quot;maxWidth&quot;: 300,
+});
+
+        
+            
+                var html_2f6b0a93a783faab5c2c28798b333ff4 = $(`&lt;div id=&quot;html_2f6b0a93a783faab5c2c28798b333ff4&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;         &lt;div style=&quot;font-family: Arial; width: 250px;&quot;&gt;             &lt;h4 style=&quot;margin: 0 0 10px 0;&quot;&gt;Rank #28 - Score: 19.2/100&lt;/h4&gt;             &lt;p style=&quot;margin: 5px 0;&quot;&gt;&lt;b&gt;Listing ID:&lt;/b&gt; 23644254&lt;/p&gt;         &lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Price:&lt;/b&gt; $409.30/night&lt;/p&gt;&lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Type:&lt;/b&gt; entire_home&lt;/p&gt;&lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Rating:&lt;/b&gt; ⭐ 5.0&lt;/p&gt;             &lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Occupancy:&lt;/b&gt; 77% / 77%&lt;/p&gt;             &lt;p style=&#x27;margin: 10px 0 0 0;&#x27;&gt;                 &lt;a href=&quot;https://www.airbnb.com/rooms/23644254&quot; target=&quot;_blank&quot; style=&quot;color: #FF5A5F;&quot;&gt;                     View on Airbnb →                 &lt;/a&gt;             &lt;/p&gt;         &lt;/div&gt;         &lt;/div&gt;`)[0];
+                popup_58156885abe60ef316bb749ea04ea9a5.setContent(html_2f6b0a93a783faab5c2c28798b333ff4);
+            
+        
+
+        marker_59e878393d0d073cb9965e3299090faa.bindPopup(popup_58156885abe60ef316bb749ea04ea9a5)
+        ;
+
+        
+    
+    
+                marker_59e878393d0d073cb9965e3299090faa.setIcon(div_icon_24dc956e69ecf05db6c03eb60cfd74f1);
+            
+    
+            var marker_873f6573e328895530ead7683a1ea2f7 = L.marker(
+                [30.25203, -97.72068],
+                {
+}
+            ).addTo(map_44d92a6948255219fd743cd54fdfcb3e);
+        
+    
+            var div_icon_b16a7b7d504d2822208a3a239ee284e5 = L.divIcon({
+  &quot;html&quot;: &quot;\n        \u003cdiv style=\&quot;\n            background-color: #dc3545;\n            border: 2px solid white;\n            border-radius: 50%;\n            width: 32px;\n            height: 32px;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            font-weight: bold;\n            font-size: 14px;\n            color: white;\n            box-shadow: 0 2px 4px rgba(0,0,0,0.3);\n        \&quot;\u003e29\u003c/div\u003e\n        &quot;,
+  &quot;className&quot;: &quot;empty&quot;,
+});
+        
+    
+        var popup_e91d71db196a64ca93bff461e7b1a8d4 = L.popup({
+  &quot;maxWidth&quot;: 300,
+});
+
+        
+            
+                var html_0bf801b9d929a29d1360b74b9bc7a003 = $(`&lt;div id=&quot;html_0bf801b9d929a29d1360b74b9bc7a003&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;         &lt;div style=&quot;font-family: Arial; width: 250px;&quot;&gt;             &lt;h4 style=&quot;margin: 0 0 10px 0;&quot;&gt;Rank #29 - Score: 18.0/100&lt;/h4&gt;             &lt;p style=&quot;margin: 5px 0;&quot;&gt;&lt;b&gt;Listing ID:&lt;/b&gt; 1302155361861567312&lt;/p&gt;         &lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Price:&lt;/b&gt; $1073.00/night&lt;/p&gt;&lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Type:&lt;/b&gt; entire_home&lt;/p&gt;&lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Rating:&lt;/b&gt; ⭐ 5.0&lt;/p&gt;             &lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Occupancy:&lt;/b&gt; 80% / 60%&lt;/p&gt;             &lt;p style=&#x27;margin: 10px 0 0 0;&#x27;&gt;                 &lt;a href=&quot;https://www.airbnb.com/rooms/1302155361861567312&quot; target=&quot;_blank&quot; style=&quot;color: #FF5A5F;&quot;&gt;                     View on Airbnb →                 &lt;/a&gt;             &lt;/p&gt;         &lt;/div&gt;         &lt;/div&gt;`)[0];
+                popup_e91d71db196a64ca93bff461e7b1a8d4.setContent(html_0bf801b9d929a29d1360b74b9bc7a003);
+            
+        
+
+        marker_873f6573e328895530ead7683a1ea2f7.bindPopup(popup_e91d71db196a64ca93bff461e7b1a8d4)
+        ;
+
+        
+    
+    
+                marker_873f6573e328895530ead7683a1ea2f7.setIcon(div_icon_b16a7b7d504d2822208a3a239ee284e5);
+            
+    
+            var marker_8250566ab6bb1697142313f44b8c9b9a = L.marker(
+                [30.257, -97.748],
+                {
+}
+            ).addTo(map_44d92a6948255219fd743cd54fdfcb3e);
+        
+    
+            var div_icon_8157f8e040dfdec304d5ed69a9c3665a = L.divIcon({
+  &quot;html&quot;: &quot;\n        \u003cdiv style=\&quot;\n            background-color: #dc3545;\n            border: 2px solid white;\n            border-radius: 50%;\n            width: 32px;\n            height: 32px;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            font-weight: bold;\n            font-size: 14px;\n            color: white;\n            box-shadow: 0 2px 4px rgba(0,0,0,0.3);\n        \&quot;\u003e30\u003c/div\u003e\n        &quot;,
+  &quot;className&quot;: &quot;empty&quot;,
+});
+        
+    
+        var popup_b995cf4ce36e76255f33730decaa27eb = L.popup({
+  &quot;maxWidth&quot;: 300,
+});
+
+        
+            
+                var html_367472f6abb67a9fab6c86a0c26dd5b7 = $(`&lt;div id=&quot;html_367472f6abb67a9fab6c86a0c26dd5b7&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;         &lt;div style=&quot;font-family: Arial; width: 250px;&quot;&gt;             &lt;h4 style=&quot;margin: 0 0 10px 0;&quot;&gt;Rank #30 - Score: 15.6/100&lt;/h4&gt;             &lt;p style=&quot;margin: 5px 0;&quot;&gt;&lt;b&gt;Listing ID:&lt;/b&gt; 809364805350339917&lt;/p&gt;         &lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Price:&lt;/b&gt; $152.45/night&lt;/p&gt;&lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Type:&lt;/b&gt; entire_home&lt;/p&gt;&lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Rating:&lt;/b&gt; ⭐ 4.5&lt;/p&gt;             &lt;p style=&#x27;margin: 5px 0;&#x27;&gt;&lt;b&gt;Occupancy:&lt;/b&gt; 77% / 57%&lt;/p&gt;             &lt;p style=&#x27;margin: 10px 0 0 0;&#x27;&gt;                 &lt;a href=&quot;https://www.airbnb.com/rooms/809364805350339917&quot; target=&quot;_blank&quot; style=&quot;color: #FF5A5F;&quot;&gt;                     View on Airbnb →                 &lt;/a&gt;             &lt;/p&gt;         &lt;/div&gt;         &lt;/div&gt;`)[0];
+                popup_b995cf4ce36e76255f33730decaa27eb.setContent(html_367472f6abb67a9fab6c86a0c26dd5b7);
+            
+        
+
+        marker_8250566ab6bb1697142313f44b8c9b9a.bindPopup(popup_b995cf4ce36e76255f33730decaa27eb)
+        ;
+
+        
+    
+    
+                marker_8250566ab6bb1697142313f44b8c9b9a.setIcon(div_icon_8157f8e040dfdec304d5ed69a9c3665a);
+            
+&lt;/script&gt;
+&lt;/html&gt;" style="position:absolute;width:100%;height:100%;left:0;top:0;border:none !important;" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe></div></div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>📋 Listing Details</h2>
+        <p>Comprehensive details for all 30 high-quality listings:</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>Listing ID</th>
+                    <th>Quality Score</th>
+                    <th>Price/Night</th>
+                    <th>Type</th>
+                    <th>Guests</th>
+                    <th>Beds</th>
+                    <th>Bedrooms</th>
+                    <th>Baths</th>
+                    <th>Rating</th>
+                    <th>Superhost</th>
+                    <th>Occupancy<br>30/60d</th>
+                    <th>Reviews</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td>1</td>
+                    <td><a href="https://www.airbnb.com/rooms/1178894856859586709" target="_blank">1178894856859586709</a></td>
+                    <td class="quality-excellent">100</td>
+                    <td>N/A</td>
+                    <td>Private</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1.0</td>
+                    <td>5.0</td>
+                    <td>✓</td>
+                    <td>103/100</td>
+                    <td>469</td>
+                </tr>
+
+                <tr>
+                    <td>2</td>
+                    <td><a href="https://www.airbnb.com/rooms/1141339553870359190" target="_blank">1141339553870359190</a></td>
+                    <td class="quality-excellent">100</td>
+                    <td>N/A</td>
+                    <td>Private</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1.0</td>
+                    <td>4.5</td>
+                    <td>-</td>
+                    <td>103/100</td>
+                    <td>168</td>
+                </tr>
+
+                <tr>
+                    <td>3</td>
+                    <td><a href="https://www.airbnb.com/rooms/1178912935006821554" target="_blank">1178912935006821554</a></td>
+                    <td class="quality-excellent">90</td>
+                    <td>N/A</td>
+                    <td>Private</td>
+                    <td>4</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>1.0</td>
+                    <td>5.0</td>
+                    <td>✓</td>
+                    <td>103/100</td>
+                    <td>162</td>
+                </tr>
+
+                <tr>
+                    <td>4</td>
+                    <td><a href="https://www.airbnb.com/rooms/980695598307202293" target="_blank">980695598307202293</a></td>
+                    <td class="quality-excellent">83</td>
+                    <td>N/A</td>
+                    <td>Private</td>
+                    <td>4</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>1.0</td>
+                    <td>4.5</td>
+                    <td>-</td>
+                    <td>103/100</td>
+                    <td>129</td>
+                </tr>
+
+                <tr>
+                    <td>5</td>
+                    <td><a href="https://www.airbnb.com/rooms/48867583" target="_blank">48867583</a></td>
+                    <td class="quality-excellent">82</td>
+                    <td>N/A</td>
+                    <td>Private</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1.0</td>
+                    <td>5.0</td>
+                    <td>✓</td>
+                    <td>103/100</td>
+                    <td>1287</td>
+                </tr>
+
+                <tr>
+                    <td>6</td>
+                    <td><a href="https://www.airbnb.com/rooms/778370358360742174" target="_blank">778370358360742174</a></td>
+                    <td class="quality-excellent">71</td>
+                    <td>N/A</td>
+                    <td>Entire</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1.0</td>
+                    <td>5.0</td>
+                    <td>-</td>
+                    <td>103/100</td>
+                    <td>121</td>
+                </tr>
+
+                <tr>
+                    <td>7</td>
+                    <td><a href="https://www.airbnb.com/rooms/907876551564869578" target="_blank">907876551564869578</a></td>
+                    <td class="quality-good">69</td>
+                    <td>N/A</td>
+                    <td>Entire</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>1</td>
+                    <td>1.0</td>
+                    <td>5.0</td>
+                    <td>-</td>
+                    <td>103/100</td>
+                    <td>24</td>
+                </tr>
+
+                <tr>
+                    <td>8</td>
+                    <td><a href="https://www.airbnb.com/rooms/1548972645560541601" target="_blank">1548972645560541601</a></td>
+                    <td class="quality-good">67</td>
+                    <td>N/A</td>
+                    <td>Private</td>
+                    <td>4</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>1.0</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>103/100</td>
+                    <td>1</td>
+                </tr>
+
+                <tr>
+                    <td>9</td>
+                    <td><a href="https://www.airbnb.com/rooms/915980469972640197" target="_blank">915980469972640197</a></td>
+                    <td class="quality-good">61</td>
+                    <td>$158</td>
+                    <td>Entire</td>
+                    <td>3</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>1.0</td>
+                    <td>5.0</td>
+                    <td>✓</td>
+                    <td>90/100</td>
+                    <td>70</td>
+                </tr>
+
+                <tr>
+                    <td>10</td>
+                    <td><a href="https://www.airbnb.com/rooms/1216254798158559027" target="_blank">1216254798158559027</a></td>
+                    <td class="quality-good">53</td>
+                    <td>$210</td>
+                    <td>Entire</td>
+                    <td>6</td>
+                    <td>3</td>
+                    <td>2</td>
+                    <td>1.0</td>
+                    <td>5.0</td>
+                    <td>✓</td>
+                    <td>77/83</td>
+                    <td>110</td>
+                </tr>
+
+                <tr>
+                    <td>11</td>
+                    <td><a href="https://www.airbnb.com/rooms/45691473" target="_blank">45691473</a></td>
+                    <td class="quality-good">51</td>
+                    <td>$128</td>
+                    <td>Entire</td>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>1.0</td>
+                    <td>5.0</td>
+                    <td>-</td>
+                    <td>83/73</td>
+                    <td>107</td>
+                </tr>
+
+                <tr>
+                    <td>12</td>
+                    <td><a href="https://www.airbnb.com/rooms/1365215109406958065" target="_blank">1365215109406958065</a></td>
+                    <td class="quality-fair">50</td>
+                    <td>$129</td>
+                    <td>Entire</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>-</td>
+                    <td>1.0</td>
+                    <td>4.0</td>
+                    <td>-</td>
+                    <td>93/77</td>
+                    <td>7</td>
+                </tr>
+
+                <tr>
+                    <td>13</td>
+                    <td><a href="https://www.airbnb.com/rooms/875980141915113844" target="_blank">875980141915113844</a></td>
+                    <td class="quality-fair">46</td>
+                    <td>$298</td>
+                    <td>Entire</td>
+                    <td>4</td>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>2.0</td>
+                    <td>5.0</td>
+                    <td>✓</td>
+                    <td>80/73</td>
+                    <td>97</td>
+                </tr>
+
+                <tr>
+                    <td>14</td>
+                    <td><a href="https://www.airbnb.com/rooms/1249956810576205504" target="_blank">1249956810576205504</a></td>
+                    <td class="quality-fair">39</td>
+                    <td>$361</td>
+                    <td>Entire</td>
+                    <td>18</td>
+                    <td>9</td>
+                    <td>6</td>
+                    <td>3.0</td>
+                    <td>5.0</td>
+                    <td>✓</td>
+                    <td>77/57</td>
+                    <td>81</td>
+                </tr>
+
+                <tr>
+                    <td>15</td>
+                    <td><a href="https://www.airbnb.com/rooms/952982541156155649" target="_blank">952982541156155649</a></td>
+                    <td class="quality-fair">36</td>
+                    <td>N/A</td>
+                    <td>Private</td>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>1.0</td>
+                    <td>5.0</td>
+                    <td>✓</td>
+                    <td>103/100</td>
+                    <td>187</td>
+                </tr>
+
+                <tr>
+                    <td>16</td>
+                    <td><a href="https://www.airbnb.com/rooms/1193622183756880194" target="_blank">1193622183756880194</a></td>
+                    <td class="quality-fair">36</td>
+                    <td>$216</td>
+                    <td>Entire</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1.0</td>
+                    <td>5.0</td>
+                    <td>-</td>
+                    <td>77/63</td>
+                    <td>16</td>
+                </tr>
+
+                <tr>
+                    <td>17</td>
+                    <td><a href="https://www.airbnb.com/rooms/52288828" target="_blank">52288828</a></td>
+                    <td class="quality-fair">36</td>
+                    <td>$163</td>
+                    <td>Entire</td>
+                    <td>4</td>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>1.0</td>
+                    <td>5.0</td>
+                    <td>✓</td>
+                    <td>80/57</td>
+                    <td>175</td>
+                </tr>
+
+                <tr>
+                    <td>18</td>
+                    <td><a href="https://www.airbnb.com/rooms/1415897966965396806" target="_blank">1415897966965396806</a></td>
+                    <td class="quality-fair">34</td>
+                    <td>$134</td>
+                    <td>Private</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1.0</td>
+                    <td>5.0</td>
+                    <td>-</td>
+                    <td>77/60</td>
+                    <td>10</td>
+                </tr>
+
+                <tr>
+                    <td>19</td>
+                    <td><a href="https://www.airbnb.com/rooms/1178913284239086357" target="_blank">1178913284239086357</a></td>
+                    <td class="quality-fair">33</td>
+                    <td>N/A</td>
+                    <td>Private</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1.0</td>
+                    <td>4.0</td>
+                    <td>✓</td>
+                    <td>103/100</td>
+                    <td>3</td>
+                </tr>
+
+                <tr>
+                    <td>20</td>
+                    <td><a href="https://www.airbnb.com/rooms/1178894943989968280" target="_blank">1178894943989968280</a></td>
+                    <td class="quality-fair">33</td>
+                    <td>N/A</td>
+                    <td>Private</td>
+                    <td>4</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>1.0</td>
+                    <td>4.0</td>
+                    <td>✓</td>
+                    <td>103/100</td>
+                    <td>5</td>
+                </tr>
+
+                <tr>
+                    <td>21</td>
+                    <td><a href="https://www.airbnb.com/rooms/1460198956208155597" target="_blank">1460198956208155597</a></td>
+                    <td class="quality-fair">33</td>
+                    <td>N/A</td>
+                    <td>Private</td>
+                    <td>4</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>1.0</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>103/100</td>
+                    <td>2</td>
+                </tr>
+
+                <tr>
+                    <td>22</td>
+                    <td><a href="https://www.airbnb.com/rooms/1435755743772384999" target="_blank">1435755743772384999</a></td>
+                    <td class="quality-fair">33</td>
+                    <td>N/A</td>
+                    <td>Private</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1.0</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>103/100</td>
+                    <td>1</td>
+                </tr>
+
+                <tr>
+                    <td>23</td>
+                    <td><a href="https://www.airbnb.com/rooms/25454542" target="_blank">25454542</a></td>
+                    <td class="quality-fair">31</td>
+                    <td>$394</td>
+                    <td>Entire</td>
+                    <td>6</td>
+                    <td>3</td>
+                    <td>2</td>
+                    <td>2.0</td>
+                    <td>4.5</td>
+                    <td>✓</td>
+                    <td>100/97</td>
+                    <td>6</td>
+                </tr>
+
+                <tr>
+                    <td>24</td>
+                    <td><a href="https://www.airbnb.com/rooms/988981411608995254" target="_blank">988981411608995254</a></td>
+                    <td class="quality-fair">31</td>
+                    <td>$394</td>
+                    <td>Entire</td>
+                    <td>6</td>
+                    <td>3</td>
+                    <td>2</td>
+                    <td>2.0</td>
+                    <td>-</td>
+                    <td>✓</td>
+                    <td>100/97</td>
+                    <td>0</td>
+                </tr>
+
+                <tr>
+                    <td>25</td>
+                    <td><a href="https://www.airbnb.com/rooms/988980990644717791" target="_blank">988980990644717791</a></td>
+                    <td class="quality-fair">31</td>
+                    <td>$394</td>
+                    <td>Entire</td>
+                    <td>6</td>
+                    <td>3</td>
+                    <td>2</td>
+                    <td>2.0</td>
+                    <td>-</td>
+                    <td>✓</td>
+                    <td>100/97</td>
+                    <td>0</td>
+                </tr>
+
+                <tr>
+                    <td>26</td>
+                    <td><a href="https://www.airbnb.com/rooms/867285036056943855" target="_blank">867285036056943855</a></td>
+                    <td class="quality-fair">27</td>
+                    <td>$266</td>
+                    <td>Private</td>
+                    <td>4</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>-</td>
+                    <td>5.0</td>
+                    <td>-</td>
+                    <td>87/100</td>
+                    <td>5</td>
+                </tr>
+
+                <tr>
+                    <td>27</td>
+                    <td><a href="https://www.airbnb.com/rooms/1369203126386677566" target="_blank">1369203126386677566</a></td>
+                    <td class="quality-fair">22</td>
+                    <td>$181</td>
+                    <td>Entire</td>
+                    <td>6</td>
+                    <td>3</td>
+                    <td>2</td>
+                    <td>1.0</td>
+                    <td>4.5</td>
+                    <td>-</td>
+                    <td>77/90</td>
+                    <td>13</td>
+                </tr>
+
+                <tr>
+                    <td>28</td>
+                    <td><a href="https://www.airbnb.com/rooms/23644254" target="_blank">23644254</a></td>
+                    <td class="quality-fair">19</td>
+                    <td>$409</td>
+                    <td>Entire</td>
+                    <td>12</td>
+                    <td>9</td>
+                    <td>4</td>
+                    <td>3.0</td>
+                    <td>5.0</td>
+                    <td>✓</td>
+                    <td>77/77</td>
+                    <td>154</td>
+                </tr>
+
+                <tr>
+                    <td>29</td>
+                    <td><a href="https://www.airbnb.com/rooms/1302155361861567312" target="_blank">1302155361861567312</a></td>
+                    <td class="quality-fair">18</td>
+                    <td>$1073</td>
+                    <td>Entire</td>
+                    <td>16</td>
+                    <td>10</td>
+                    <td>6</td>
+                    <td>4.5</td>
+                    <td>5.0</td>
+                    <td>✓</td>
+                    <td>80/60</td>
+                    <td>23</td>
+                </tr>
+
+                <tr>
+                    <td>30</td>
+                    <td><a href="https://www.airbnb.com/rooms/809364805350339917" target="_blank">809364805350339917</a></td>
+                    <td class="quality-fair">16</td>
+                    <td>$152</td>
+                    <td>Entire</td>
+                    <td>3</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>1.0</td>
+                    <td>4.5</td>
+                    <td>-</td>
+                    <td>77/57</td>
+                    <td>109</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+    <div class="footer">
+        <p>Generated by Airbnb Market Analysis System</p>
+        <p>For interactive features, open this file in a web browser</p>
+    </div>
+</body>
+</html>

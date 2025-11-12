@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 10px;
+            font-size: 12px;
+            line-height: 1.4;
+            max-width: 400px;
+        }
+        .listing-header {
+            border-bottom: 2px solid #FF5A5F;
+            padding-bottom: 8px;
+            margin-bottom: 10px;
+        }
+        .listing-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #484848;
+            margin-bottom: 4px;
+        }
+        .listing-location {
+            color: #767676;
+            font-size: 11px;
+        }
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+        .info-item {
+            background: #f7f7f7;
+            padding: 6px 8px;
+            border-radius: 4px;
+            border-left: 3px solid #FF5A5F;
+            display: flex;
+            flex-direction: column;
+        }
+        .info-label {
+            font-weight: bold;
+            font-size: 10px;
+            color: #484848;
+            text-transform: uppercase;
+            margin-bottom: 2px;
+        }
+        .info-value {
+            color: #767676;
+            font-size: 11px;
+        }
+        .host-section {
+            background: #f0f8ff;
+            padding: 8px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            border-left: 3px solid #0066cc;
+        }
+        .host-name {
+            font-weight: bold;
+            color: #0066cc;
+        }
+        .superhost-badge {
+            background: #ff6b35;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 12px;
+            font-size: 9px;
+            font-weight: bold;
+            margin-left: 5px;
+        }
+        .reviews-section {
+            background: #f9f9f9;
+            padding: 8px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+        .review-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 4px;
+            font-size: 10px;
+        }
+        .review-item {
+            text-align: center;
+            padding: 4px;
+            background: white;
+            border-radius: 3px;
+        }
+        .review-score {
+            font-weight: bold;
+            color: #00a699;
+        }
+        .amenities-section {
+            margin-bottom: 10px;
+        }
+        .amenities-title {
+            font-weight: bold;
+            font-size: 11px;
+            color: #484848;
+            margin-bottom: 4px;
+        }
+        .amenities-list {
+            font-size: 10px;
+            color: #767676;
+            max-height: 60px;
+            overflow-y: auto;
+        }
+        .price-section {
+            background: #e8f5e8;
+            padding: 8px;
+            border-radius: 4px;
+            text-align: center;
+            border-left: 3px solid #00a699;
+            margin-bottom: 10px;
+        }
+        .price-amount {
+            font-size: 18px;
+            font-weight: bold;
+            color: #00a699;
+        }
+        .id-timestamp {
+            font-size: 9px;
+            color: #999;
+            text-align: center;
+            margin-top: 8px;
+            padding-top: 8px;
+            border-top: 1px solid #eee;
+        }
+        .listing-link {
+            background: #FF5A5F;
+            color: white;
+            padding: 10px;
+            border-radius: 4px;
+            text-align: center;
+            margin-bottom: 10px;
+            text-decoration: none;
+            display: block;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        .listing-link:hover {
+            background: #e04848;
+        }
+        .occupancy-section {
+            background: #fff9e6;
+            padding: 8px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            border-left: 3px solid #ffa500;
+        }
+        .occupancy-title {
+            font-weight: bold;
+            font-size: 11px;
+            color: #484848;
+            margin-bottom: 6px;
+        }
+        .occupancy-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6px;
+            font-size: 10px;
+        }
+        .occupancy-item {
+            padding: 4px 6px;
+            background: white;
+            border-radius: 3px;
+        }
+        .occupancy-rule {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .check-mark {
+            color: #00a699;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .x-mark {
+            color: #ccc;
+            font-size: 14px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="listing-header">
+        <div class="listing-title">[% "name" %]</div>
+        <div class="listing-location">[% "city" %], [% "state" %], [% "country" %]</div>
+    </div>
+	
+	<a href="https://www.airbnb.com/rooms/[% "listing_id" %]" target="_blank" class="listing-link">
+        View on Airbnb →
+    </a>
+	
+	<div class="price-section">
+        <div class="price-amount">
+            [% CASE 
+                WHEN "calendar_price_per_night" IS NOT NULL THEN 
+                    '$' || format_number("calendar_price_per_night", 0) || ' / night'
+                WHEN "price_amount" IS NOT NULL THEN 
+                    '$' || format_number("price_amount", 0) || ' / night'
+                ELSE 
+                    'Price not available'
+            END %]
+        </div>
+        <div style="font-size:10px; color:#767676; margin-top:4px;">
+            [% CASE 
+                WHEN "calendar_min_nights" > 1 THEN 
+                    'Min ' || "calendar_min_nights" || ' nights ($' || format_number("calendar_price_total", 0) || ' total)'
+                ELSE 
+                    ''
+            END %]
+        </div>
+    </div>
+	
+	<div class="occupancy-section">
+        <div class="occupancy-title">📅 Occupancy Status</div>
+        <div class="occupancy-stats">
+            <div class="occupancy-item">
+                <strong>0-30 days:</strong> [% "occupancy_count_30" %] booked
+            </div>
+            <div class="occupancy-item">
+                <strong>30-60 days:</strong> [% "occupancy_count_30to60" %] booked
+            </div>
+        </div>
+        <div style="margin-top: 8px; padding-top: 8px; border-top: 1px solid #eee;">
+            <div class="occupancy-rule">
+                <span class="[% CASE WHEN "occupancy_rule75_30" = 1 THEN 'check-mark' ELSE 'x-mark' END %]">
+                    [% CASE WHEN "occupancy_rule75_30" = 1 THEN '✓' ELSE '✗' END %]
+                </span>
+                <span>75%+ occupied (0-30 days)</span>
+            </div>
+            <div class="occupancy-rule">
+                <span class="[% CASE WHEN "occupancy_rule55_30to60" = 1 THEN 'check-mark' ELSE 'x-mark' END %]">
+                    [% CASE WHEN "occupancy_rule55_30to60" = 1 THEN '✓' ELSE '✗' END %]
+                </span>
+                <span>55%+ occupied (30-60 days)</span>
+            </div>
+        </div>
+    </div>
+	
+	<div class="host-section">
+        <div class="host-name">
+            Host: [% "host_name" %]
+            [% CASE WHEN "is_superhost" = true THEN '<span class="superhost-badge">★ SUPERHOST</span>' ELSE '' END %]
+        </div>
+    </div>
+    
+    <div class="reviews-section">
+        <div class="amenities-title">⭐ Rating & Reviews</div>
+        <div class="review-stats">
+            <div class="review-item">
+                <div class="review-score">[% CASE WHEN "star_rating" IS NOT NULL THEN "star_rating" ELSE 'N/A' END %]</div>
+                <div>Rating</div>
+            </div>
+            <div class="review-item">
+                <div class="review-score">[% "last_2_weeks_count" %]</div>
+                <div>Last 2 weeks</div>
+            </div>
+            <div class="review-item">
+                <div class="review-score">[% "last_4_weeks_count" %]</div>
+                <div>Last 4 weeks</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="price-section" style="background: #f0e6ff; border-left: 3px solid #9b59b6;">
+        <div style="font-size: 11px; color: #767676; margin-bottom: 4px;">Quality Score</div>
+        <div class="price-amount" style="color: #9b59b6;">
+            [% CASE WHEN "quality_score" IS NOT NULL THEN format_number("quality_score", 1) ELSE 'N/A' END %]
+        </div>
+        <div style="font-size: 9px; color: #767676; margin-top: 2px;">
+            (Based on occupancy + review recency)
+        </div>
+    </div>
+    
+    <div class="info-grid">
+        <div class="info-item">
+            <div class="info-label">Type</div>
+            <div class="info-value">[% "room_type_category" %]</div>
+        </div>
+        <div class="info-item">
+            <div class="info-label">Capacity</div>
+            <div class="info-value">[% "person_capacity" %] guests</div>
+        </div>
+        <div class="info-item">
+            <div class="info-label">Bedrooms</div>
+            <div class="info-value">[% CASE WHEN "bedrooms" IS NOT NULL THEN "bedrooms" ELSE 'N/A' END %]</div>
+        </div>
+        <div class="info-item">
+            <div class="info-label">Bathrooms</div>
+            <div class="info-value">[% CASE WHEN "bathrooms" IS NOT NULL THEN "bathrooms" ELSE 'N/A' END %]</div>
+        </div>
+        <div class="info-item">
+            <div class="info-label">Beds</div>
+            <div class="info-value">[% CASE WHEN "beds" IS NOT NULL THEN "beds" ELSE 'N/A' END %]</div>
+        </div>
+        <div class="info-item">
+            <div class="info-label">Min Stay</div>
+            <div class="info-value">[% CASE WHEN "calendar_min_nights" IS NOT NULL THEN "calendar_min_nights" || ' nights' WHEN "min_nights" IS NOT NULL THEN "min_nights" || ' nights' ELSE 'N/A' END %]</div>
+        </div>
+    </div>
+   
+    <div class="id-timestamp">
+        Listing ID: [% "listing_id" %] | Updated: [% substr("timestamp", 1, 10) %]
+    </div>
+</body>
+</html>
